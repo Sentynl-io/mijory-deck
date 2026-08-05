@@ -32,6 +32,11 @@
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
+        html {
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
         body {
             background-color: var(--gray-200); 
             display: flex;
@@ -41,16 +46,21 @@
             padding: 50px 0;
             font-family: 'Plus Jakarta Sans', sans-serif;
             -webkit-font-smoothing: antialiased;
+            width: 100%;
+            overflow-x: hidden;
         }
+
+        img { max-width: 100%; }
 
         @media print {
             body { background: none; padding: 0; gap: 0; }
-            .slide-container { box-shadow: none; page-break-after: always; break-after: page; margin: 0; }
+            .slide-container { box-shadow: none; page-break-after: always; break-after: page; margin: 0; width: 1440px !important; height: 810px !important; overflow: hidden !important; }
         }
 
         /* STRICT GRID LAYOUT PREVENTS FOOTER OVERLAP */
         .slide-container {
             width: 1440px; 
+            max-width: 100%;
             height: 810px;
             position: relative;
             background-color: var(--pure-white);
@@ -282,6 +292,491 @@
         
         /* Custom slide 1 logic so grid layout doesn't break bleed */
         #slide1 { display: block; padding: 0; }
+        #slide1 .bleed-hero-image {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0f172a;
+        }
+        #slide1 .bleed-hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        #slide1 .hero-logo {
+            height: 200px;
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 25px;
+            display: block;
+        }
+        #slide1 .hero-logo img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            object-position: left center;
+            display: block;
+        }
+        #slide1 .hero-kicker {
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--blue-accent);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+        #slide1 .hero-title {
+            font-size: 54px;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+        #slide1 .hero-sub {
+            font-size: 20px;
+            max-width: 550px;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+        #slide1 .slide-footer.hero-footer {
+            position: absolute;
+            bottom: 25px;
+            left: 80px;
+            right: 60px;
+            border-top: none;
+            width: auto;
+        }
+
+        /* ==========================================================================
+           RESPONSIVE: tablet + mobile
+           ========================================================================== */
+        @media (max-width: 1480px) {
+            body {
+                padding: 24px 0;
+                gap: 28px;
+            }
+
+            .slide-container {
+                width: calc(100% - 32px);
+                height: auto;
+                min-height: 0;
+                overflow: visible;
+                grid-template-rows: auto auto auto;
+                padding: 28px 40px 20px;
+            }
+
+            #slide1 {
+                min-height: 0;
+                padding: 0;
+            }
+
+            .bleed-layout-container {
+                position: relative;
+                height: auto;
+                min-height: 520px;
+            }
+
+            .content-area {
+                padding: 16px 0;
+                justify-content: flex-start;
+            }
+
+            .split-layout,
+            .two-column {
+                gap: 28px;
+            }
+
+            .three-column,
+            .four-column {
+                gap: 18px;
+            }
+        }
+
+        @media (max-width: 1100px) {
+            .slide-container {
+                padding: 24px 28px 18px;
+            }
+
+            h1 { font-size: 42px; }
+            h2 { font-size: 28px; }
+            .metric-value { font-size: 48px; }
+
+            .split-layout,
+            .two-column {
+                grid-template-columns: 1fr !important;
+                height: auto;
+                gap: 20px;
+            }
+
+            .three-column {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            .four-column {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            /* Override common inline grids used across slides */
+            .content-area [style*="grid-template-columns: repeat(3"],
+            .content-area [style*="grid-template-columns:repeat(3"],
+            .content-area [style*="grid-template-columns: repeat(4"],
+            .content-area [style*="grid-template-columns:repeat(4"],
+            .content-area [style*="grid-template-columns: 1fr 1fr"],
+            .content-area [style*="grid-template-columns:1fr 1fr"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 16px !important;
+            }
+
+            .bleed-layout-container {
+                grid-template-columns: 1fr !important;
+                min-height: 0;
+            }
+
+            #slide1 .bleed-content {
+                padding: 40px 32px 80px;
+            }
+
+            #slide1 .bleed-hero-image {
+                height: 280px;
+                order: -1;
+            }
+
+            #slide1 .hero-logo { height: 120px; max-width: 360px; margin-bottom: 16px; }
+            #slide1 .hero-title { font-size: 36px; margin-bottom: 16px; }
+            #slide1 .hero-sub { font-size: 16px; }
+            #slide1 .slide-footer.hero-footer {
+                left: 32px;
+                right: 32px;
+                bottom: 16px;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .bar-chart-vertical { height: 220px; }
+            .app-showcase-container { height: 300px; }
+            .fw-phones { width: 240px; height: 280px; }
+            .fw-phone-center { width: 140px; height: 280px; }
+            .fw-phone-left,
+            .fw-phone-right { width: 110px; height: 220px; }
+            .fw-phone-left { left: -40px; }
+            .fw-phone-right { right: -40px; }
+
+            .sam-bar-label { flex: 0 0 110px; font-size: 11px; }
+            .sam-bar-value { flex: 0 0 52px; font-size: 14px; }
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 12px 0 32px;
+                gap: 16px;
+            }
+
+            .slide-container {
+                width: calc(100% - 16px);
+                padding: 18px 16px 14px;
+                border-radius: 10px;
+                box-shadow: 0 12px 28px -10px rgba(0, 0, 0, 0.18);
+            }
+
+            .slide-header {
+                flex-wrap: wrap;
+                gap: 8px 12px;
+                padding-bottom: 8px;
+                align-items: flex-start;
+            }
+
+            .slide-header h2,
+            .slide-title {
+                font-size: 22px !important;
+                line-height: 1.2;
+            }
+
+            .slide-number { font-size: 12px; }
+
+            h1 { font-size: 28px; }
+            h2 { font-size: 22px; }
+            h3 { font-size: 18px; }
+            p { font-size: 14px; margin-bottom: 12px; }
+            .metric-value { font-size: 36px; }
+
+            .content-area {
+                padding: 12px 0;
+            }
+
+            .tile { padding: 16px; }
+
+            .three-column,
+            .four-column,
+            .split-layout,
+            .two-column {
+                grid-template-columns: 1fr !important;
+            }
+
+            .content-area [style*="grid-template-columns"],
+            .slide-container [style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+                gap: 14px !important;
+            }
+
+            /* Soften oversized inline type */
+            .content-area [style*="font-size: 48px"],
+            .content-area [style*="font-size:48px"],
+            .content-area [style*="font-size: 54px"],
+            .content-area [style*="font-size:54px"],
+            .content-area [style*="font-size: 42px"],
+            .content-area [style*="font-size:42px"],
+            .content-area [style*="font-size: 36px"],
+            .content-area [style*="font-size:36px"] {
+                font-size: 26px !important;
+                line-height: 1.2 !important;
+            }
+
+            .content-area [style*="font-size: 22px"],
+            .content-area [style*="font-size:22px"],
+            .content-area [style*="font-size: 20px"],
+            .content-area [style*="font-size:20px"],
+            .content-area [style*="font-size: 18px"],
+            .content-area [style*="font-size:18px"] {
+                font-size: 15px !important;
+            }
+
+            .slide-footer {
+                flex-wrap: wrap;
+                gap: 6px 12px;
+                font-size: 9px;
+                letter-spacing: 1px;
+                padding-top: 10px;
+            }
+
+            #slide1 .bleed-content {
+                padding: 24px 18px 72px;
+            }
+
+            #slide1 .bleed-hero-image {
+                height: 200px;
+            }
+
+            #slide1 .hero-logo {
+                height: 72px;
+                max-width: 220px;
+                margin-bottom: 12px;
+            }
+
+            #slide1 .hero-kicker {
+                font-size: 11px;
+                letter-spacing: 2px;
+                margin-bottom: 10px;
+            }
+
+            #slide1 .hero-title {
+                font-size: 26px !important;
+                margin-bottom: 12px;
+            }
+
+            #slide1 .hero-sub {
+                font-size: 14px !important;
+                max-width: none;
+            }
+
+            #slide1 .slide-footer.hero-footer {
+                left: 18px;
+                right: 18px;
+                bottom: 12px;
+                position: absolute;
+                font-size: 9px;
+            }
+
+            /* Tables: horizontal scroll instead of crushing */
+            .table-scroll,
+            .content-area .tile:has(table) {
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .content-area {
+                overflow-x: visible;
+            }
+
+            .funds-layout {
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 20px !important;
+            }
+
+            .funds-layout .pie-container {
+                width: 160px !important;
+                height: 160px !important;
+            }
+
+            .funds-layout .pie-inner {
+                width: 96px !important;
+                height: 96px !important;
+            }
+
+            .funds-layout table {
+                min-width: 0 !important;
+                width: 100%;
+            }
+
+            .content-area [style*="font-size: 100px"],
+            .content-area [style*="font-size:100px"] {
+                font-size: 56px !important;
+            }
+
+            table {
+                min-width: 520px;
+            }
+
+            th, td {
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+
+            .ui-card { height: 110px; }
+
+            .logo-container {
+                max-width: 100%;
+            }
+
+            .theme-dark .logo-container {
+                width: auto;
+                max-width: 100%;
+            }
+
+            .pie-container {
+                width: 160px;
+                height: 160px;
+                margin: 0 auto;
+            }
+
+            .pie-inner {
+                width: 96px;
+                height: 96px;
+            }
+
+            .bar-chart-vertical {
+                height: 200px;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .v-bar-container { width: 40px; }
+            .v-bar-val { font-size: 11px; }
+            .v-bar-label { font-size: 10px; }
+
+            .sam-bar-wrapper {
+                flex-wrap: wrap;
+                gap: 6px 10px;
+            }
+
+            .sam-bar-label {
+                flex: 0 0 100%;
+                text-align: left;
+                font-size: 11px;
+            }
+
+            .sam-bar-track { flex: 1 1 auto; min-width: 0; }
+            .sam-bar-value { flex: 0 0 auto; }
+
+            .rapid-growth-chart { height: 140px; }
+
+            .app-showcase-container {
+                height: auto;
+                min-height: 260px;
+                padding: 10px 0 20px;
+            }
+
+            .fw-phones {
+                width: 180px;
+                height: 260px;
+            }
+
+            .fw-phone-center {
+                width: 130px;
+                height: 260px;
+                position: relative;
+                left: auto;
+                right: auto;
+            }
+
+            .fw-phone-left,
+            .fw-phone-right {
+                display: none;
+            }
+
+            /* Kill awkward fixed paddings that blow out mobile */
+            .content-area [style*="padding-right: 20px"],
+            .content-area [style*="padding-right:20px"] {
+                padding-right: 0 !important;
+            }
+
+            /* Stack common side-by-side flex rows */
+            .content-area > div[style*="display: flex"]:not([style*="flex-direction: column"]),
+            .content-area > [style*="display: flex"]:not([style*="flex-direction: column"]) {
+                flex-direction: column !important;
+                align-items: stretch !important;
+                gap: 20px !important;
+            }
+
+            .content-area [style*="width: 180px"],
+            .content-area [style*="width:180px"],
+            .content-area [style*="width: 250px"],
+            .content-area [style*="width:250px"] {
+                width: min(100%, 220px) !important;
+            }
+
+            .content-area [style*="height: 100px"],
+            .content-area [style*="height:100px"] {
+                height: auto !important;
+                min-height: 64px;
+            }
+
+            #slide12 h1 {
+                font-size: 48px !important;
+                letter-spacing: 2px !important;
+                margin-bottom: 16px !important;
+            }
+
+            #slide12 .content-area [style*="margin-bottom: 50px"] {
+                margin-bottom: 24px !important;
+            }
+
+            /* Partner / logo + text rows */
+            .content-area div[style*="display: flex"][style*="align-items: center"][style*="gap: 20px"],
+            .content-area div[style*="display: flex"][style*="align-items: center"][style*="gap: 15px"] {
+                flex-wrap: wrap !important;
+            }
+
+            /* Chart panel: drop fixed tall heights */
+            .content-area [style*="height: 350px"],
+            .content-area [style*="height:350px"] {
+                height: 240px !important;
+            }
+
+            .content-area [style*="padding-left: 20px"][style*="border-left"] {
+                padding-left: 0 !important;
+                border-left: none !important;
+                margin-top: 12px;
+            }
+
+            .v-bar[style*="width: 60px"] {
+                width: 36px !important;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .slide-container {
+                width: calc(100% - 10px);
+                padding: 14px 12px 12px;
+            }
+
+            #slide1 .hero-title { font-size: 22px !important; }
+            .slide-header h2,
+            .slide-title { font-size: 18px !important; }
+            .metric-value { font-size: 30px; }
+        }
     </style>
 </head>
 <body>
@@ -291,21 +786,21 @@
     <div class="bleed-layout-container">
         <div class="bleed-content">
             <!-- Explicit styles to force massive logo size overriding all global constraints -->
-            <div style="height: 200px; width: 100%; max-width: 600px; margin-bottom: 25px; display: block;">
-                <img src="MiJory Logo.jpg" alt="MiJory Wellness" style="height: 100%; width: 100%; object-fit: contain; object-position: left center; display: block;">
+            <div class="hero-logo">
+                <img src="MiJory Logo.jpg" alt="MiJory Wellness">
             </div>
             
-            <div style="font-size: 14px; font-weight: 800; color: var(--blue-accent); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px;">Investor Presentation</div>
-            <h1 style="font-size: 54px; line-height: 1.1; margin-bottom: 30px;">End-to-End Infrastructure for Peptides, Longevity, and Personalized Health</h1>
-            <p style="font-size: 20px; max-width: 550px; font-weight: 500; line-height: 1.6;">A full-vertical infrastructure platform connecting product testing, wholesale supply, and verified patient outcomes.</p>
+            <div class="hero-kicker">Investor Presentation</div>
+            <h1 class="hero-title">End-to-End Infrastructure for Peptides, Longevity, and Personalized Health</h1>
+            <p class="hero-sub">A full-vertical infrastructure platform connecting product testing, wholesale supply, and verified patient outcomes.</p>
             
-            <div class="slide-footer" style="position: absolute; bottom: 25px; left: 80px; right: 60px; border-top: none; width: auto;">
+            <div class="slide-footer hero-footer">
                 <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
                 <span><strong style="color: var(--blue-accent);">Do Not Distribute</strong></span>
             </div>
         </div>
-        <div style="height: 100%; width: 100%; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #0f172a;">
-            <img src="Slide 1 image.png" alt="Medical Infrastructure" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="bleed-hero-image">
+            <img src="Slide 1 image.png" alt="Medical Infrastructure">
         </div>
     </div>
 </div>
@@ -891,7 +1386,7 @@
             </div>
         </div>
 
-        <div style="display: flex; gap: 40px; align-items: center;">
+        <div class="funds-layout" style="display: flex; gap: 40px; align-items: center;">
             <div style="flex-shrink: 0;">
                 <div class="pie-container" style="width: 200px; height: 200px;">
                     <div class="pie-chart"></div>
@@ -903,9 +1398,10 @@
                     </div>
                 </div>
             </div>
-            <div style="flex-grow: 1;">
+            <div style="flex-grow: 1; min-width: 0;">
                 <h4 style="color: var(--pure-white); font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 8px;">Use of Funds Allocation</h4>
-                <table style="margin: 0;">
+                <div class="table-scroll">
+                <table style="margin: 0; min-width: 0;">
                     <tbody>
                         <tr>
                             <td style="width: 20px; padding: 6px 8px; border: none;"><div style="width: 12px; height: 12px; background: #00FFFF; border-radius: 50%; box-shadow: 0 0 5px #00FFFF;"></div></td>
@@ -945,6 +1441,7 @@
                         </tr>
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
     </div>
@@ -1141,6 +1638,7 @@
     <div class="content-area">
         <p style="margin-bottom: 15px; font-size: 15px;">Base-case engines with detailed support available in the data room.</p>
         <div class="tile" style="padding: 0; overflow: hidden; box-shadow: none; border: 1px solid var(--gray-200);">
+            <div class="table-scroll">
             <table>
                 <thead>
                     <tr>
@@ -1187,6 +1685,7 @@
                     </tr>
                 </tbody>
             </table>
+            </div>
         </div>
     </div>
     <div class="slide-footer">
