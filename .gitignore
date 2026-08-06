@@ -1,2 +1,5 @@
 .DS_Store
 **/.DS_Store
+node_modules/
+.pdf-preview/
+.pdf-preview-slide1.png

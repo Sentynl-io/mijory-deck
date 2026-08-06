@@ -1,0 +1,49 @@
+name: Generate PDF Deck
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - '*.jpg'
+      - '*.jpeg'
+      - '*.png'
+      - 'scripts/generate-pdf.mjs'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/generate-pdf.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate PDF
+        run: npm run pdf
+
+      - name: Commit PDF if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add MiJory-Wellness-Investor-Deck.pdf
+          if git diff --staged --quiet; then
+            echo "PDF unchanged"
+          else
+            git commit -m "chore: regenerate investor deck PDF"
+            git push
+          fi

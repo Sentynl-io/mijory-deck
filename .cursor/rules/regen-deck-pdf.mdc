@@ -1,0 +1,22 @@
+---
+description: Regenerate the investor deck PDF after any website/deck update
+globs: index.html,*.jpg,*.jpeg,*.png,scripts/generate-pdf.mjs
+alwaysApply: true
+---
+
+# Regenerate PDF After Deck Updates
+
+Whenever the investor deck website changes (`index.html`, slide images/logos, or PDF generation scripts), always regenerate the PDF before finishing:
+
+```bash
+npm run pdf
+```
+
+This writes `MiJory-Wellness-Investor-Deck.pdf` using the screenshot-based WYSIWYG exporter in `scripts/generate-pdf.mjs` (desktop 1440×810 pages + clickable links). The generator also refreshes the footer **Updated … CT** timestamp in `index.html` so the live deck and PDF stay version-aligned.
+
+## Requirements
+
+- Do **not** use Chrome `--print-to-pdf` / print-media export — it breaks layout via responsive CSS and mangled links.
+- Keep using `npm run pdf` only (Puppeteer screen screenshots + pdf-lib).
+- If `node_modules` is missing, run `npm install` first.
+- Include the regenerated PDF in the same change set when committing deck updates.

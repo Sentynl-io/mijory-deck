@@ -1,6 +1,26 @@
 # MiJory Wellness Investor Deck
 
-Static HTML investor presentation hosted on GitHub Pages.
+Static HTML investor presentation (and matching PDF) for MiJory Wellness.
+
+## View locally
+
+Open `index.html` in a browser, or:
+
+```bash
+python3 -m http.server 8080
+# then visit http://localhost:8080
+```
+
+## Generate PDF
+
+Creates `MiJory-Wellness-Investor-Deck.pdf` — one 1440×810 page per slide, matching the web layout:
+
+```bash
+npm install
+npm run pdf
+```
+
+A GitHub Action also regenerates the PDF on pushes to `main` that change the deck.
 
 ## GitHub Pages setup
 
@@ -10,6 +30,6 @@ In the repo **Settings → Pages**:
 2. **Branch:** `main`
 3. **Folder:** `/ (root)`
 
-After you push to `main`, the site will be at:
+After Pages is enabled, the site will be at:
 
 `https://sentynl-io.github.io/mijory-deck/`

@@ -1,0 +1,12 @@
+{
+  "name": "mijory-deck",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "pdf": "node scripts/generate-pdf.mjs"
+  },
+  "devDependencies": {
+    "pdf-lib": "^1.17.1",
+    "puppeteer": "^24.15.0"
+  }
+}

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="deck-updated" content="2026-08-06T14:33-05:00">
     <title>MiJory Wellness - VC/PE Investor Presentation</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,9 +53,37 @@
 
         img { max-width: 100%; }
 
+        @page {
+            size: 1440px 810px;
+            margin: 0;
+        }
+
         @media print {
-            body { background: none; padding: 0; gap: 0; }
-            .slide-container { box-shadow: none; page-break-after: always; break-after: page; margin: 0; width: 1440px !important; height: 810px !important; overflow: hidden !important; }
+            html, body {
+                background: none !important;
+                padding: 0 !important;
+                gap: 0 !important;
+                margin: 0 !important;
+                width: 1440px !important;
+            }
+            .slide-container {
+                box-shadow: none !important;
+                page-break-after: always;
+                break-after: page;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                margin: 0 !important;
+                width: 1440px !important;
+                height: 810px !important;
+                max-width: 1440px !important;
+                overflow: hidden !important;
+                border-radius: 0 !important;
+            }
+            .slide-container:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+            a { text-decoration: none !important; }
         }
 
         /* STRICT GRID LAYOUT PREVENTS FOOTER OVERLAP */
@@ -111,6 +140,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 12px;
             font-size: 11px;
             font-weight: 800;
             text-transform: uppercase;
@@ -120,6 +150,18 @@
             color: var(--gray-500);
             align-self: start;
         }
+
+        .deck-updated {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+            text-transform: none;
+            color: inherit;
+            opacity: 0.9;
+            white-space: nowrap;
+        }
+        .theme-dark .deck-updated { color: #94a3b8; }
+
 
         /* Theme Definitions */
         .theme-light { background-color: var(--pure-white) !important; color: var(--pure-black); }
@@ -523,10 +565,10 @@
             white-space: nowrap;
         }
         .tf-text {
-            font-size: 9px;
+            font-size: 8px;
             font-weight: 600;
             color: #e2e8f0;
-            line-height: 1.25;
+            line-height: 1.2;
         }
 
         /* Custom slide 1 logic so grid layout doesn't break bleed */
@@ -590,7 +632,7 @@
         /* ==========================================================================
            RESPONSIVE: tablet + mobile
            ========================================================================== */
-        @media (max-width: 1480px) {
+        @media screen and (max-width: 1480px) {
             body {
                 padding: 24px 0;
                 gap: 28px;
@@ -632,7 +674,7 @@
             }
         }
 
-        @media (max-width: 1100px) {
+        @media screen and (max-width: 1100px) {
             .slide-container {
                 padding: 24px 28px 18px;
             }
@@ -713,7 +755,7 @@
             .sam-bar-value { flex: 0 0 52px; font-size: 14px; }
         }
 
-        @media (max-width: 700px) {
+        @media screen and (max-width: 700px) {
             body {
                 padding: 12px 0 32px;
                 gap: 16px;
@@ -1022,7 +1064,7 @@
             }
         }
 
-        @media (max-width: 420px) {
+        @media screen and (max-width: 420px) {
             .slide-container {
                 width: calc(100% - 10px);
                 padding: 14px 12px 12px;
@@ -1052,6 +1094,7 @@
             
             <div class="slide-footer hero-footer">
                 <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
+                <span class="deck-updated">Updated Aug 6, 2026 · 2:33 PM CT</span>
                 <span><strong style="color: var(--blue-accent);">Do Not Distribute</strong></span>
             </div>
         </div>
@@ -1089,6 +1132,7 @@
     </div>
     <div class="slide-footer">
         <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
+        <span class="deck-updated">Updated Aug 6, 2026 · 2:33 PM CT</span>
         <span><strong>Do Not Distribute</strong></span>
     </div>
 </div>
@@ -1160,6 +1204,7 @@
     </div>
     <div class="slide-footer">
         <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
+        <span class="deck-updated">Updated Aug 6, 2026 · 2:33 PM CT</span>
         <span><strong>Do Not Distribute</strong></span>
     </div>
 </div>
@@ -1227,6 +1272,7 @@
     </div>
     <div class="slide-footer">
         <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
+        <span class="deck-updated">Updated Aug 6, 2026 · 2:33 PM CT</span>
         <span><strong>Do Not Distribute</strong></span>
     </div>
 </div>
@@ -1291,6 +1337,7 @@
     </div>
     <div class="slide-footer">
         <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
+        <span class="deck-updated">Updated Aug 6, 2026 · 2:33 PM CT</span>
         <span><strong>Do Not Distribute</strong></span>
     </div>
 </div>
@@ -1377,6 +1424,7 @@
     </div>
     <div class="slide-footer">
         <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
+        <span class="deck-updated">Updated Aug 6, 2026 · 2:33 PM CT</span>
         <span><strong>Do Not Distribute</strong></span>
     </div>
 </div>
@@ -1416,6 +1464,7 @@
     </div>
     <div class="slide-footer">
         <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
+        <span class="deck-updated">Updated Aug 6, 2026 · 2:33 PM CT</span>
         <span><strong>Do Not Distribute</strong></span>
     </div>
 </div>
@@ -1467,6 +1516,7 @@
     </div>
     <div class="slide-footer">
         <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
+        <span class="deck-updated">Updated Aug 6, 2026 · 2:33 PM CT</span>
         <span><strong>Do Not Distribute</strong></span>
     </div>
 </div>
@@ -1525,6 +1575,7 @@
     </div>
     <div class="slide-footer">
         <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
+        <span class="deck-updated">Updated Aug 6, 2026 · 2:33 PM CT</span>
         <span><strong>Do Not Distribute</strong></span>
     </div>
 </div>
@@ -1537,7 +1588,7 @@
     </div>
     <div class="content-area">
         <div class="traction-board">
-            <p class="traction-intro">Live product momentum across the MiJory stack — from wholesale cash flow today through patented SaaS, global expansion, and a $450M ARR ecosystem.</p>
+            <p class="traction-intro">Live product momentum across the MiJory stack — 342 BioTide entities and 300+ clinicians live today, with dual SaaS activation, vertical regulatory shield, and a path to $450M ARR at 85% margins.</p>
             <div class="traction-legend">
                 <span class="legend-item"><span class="legend-dot live"></span> Live / Operational</span>
                 <span class="legend-item"><span class="legend-dot beta"></span> Beta / Pilot</span>
@@ -1577,43 +1628,43 @@
                 <div class="t-lane">
                     <div class="t-event live">
                         <span class="t-tag live">Live</span>
-                        <div class="t-event-title">v1.0 Wholesale Portal</div>
-                        <div class="t-event-desc">National B2B order flow with 200+ rep engine</div>
+                        <div class="t-event-title">Live RUO Portal</div>
+                        <div class="t-event-desc">342 active B2B entities on v1.0; 200+ reps processing national wholesale volume</div>
                     </div>
                 </div>
                 <div class="t-lane">
                     <div class="t-event launch">
                         <span class="t-tag launch">Feature</span>
-                        <div class="t-event-title">Catalog Expansion</div>
-                        <div class="t-event-desc">Longevity &amp; wellness compounds added</div>
+                        <div class="t-event-title">RUO Catalog Expansion</div>
+                        <div class="t-event-desc">Beyond peptides into research compounds, longevity molecules &amp; bioreagents</div>
                     </div>
                 </div>
                 <div class="t-lane">
                     <div class="t-event launch">
                         <span class="t-tag launch">Feature</span>
-                        <div class="t-event-title">Catalog + Sales AI/ML</div>
-                        <div class="t-event-desc">Continued catalog expansion &amp; rep AI/ML selling tools</div>
+                        <div class="t-event-title">Sales AI/ML Enablement</div>
+                        <div class="t-event-desc">AI tools for 200+ reps: automated B2B reorder &amp; clinic demand forecasting</div>
                     </div>
                 </div>
                 <div class="t-lane">
                     <div class="t-event scale">
                         <span class="t-tag scale">Scale</span>
-                        <div class="t-event-title">Automated Reorder Pipelines</div>
-                        <div class="t-event-desc">High-volume B2B retention &amp; replenishment</div>
+                        <div class="t-event-title">Universal B2B Sales Engine</div>
+                        <div class="t-event-desc">White-label rep/downline software for nutraceutical &amp; device sales orgs</div>
                     </div>
                 </div>
                 <div class="t-lane">
                     <div class="t-event scale">
                         <span class="t-tag scale">Global</span>
-                        <div class="t-event-title">LATAM Network Rollout</div>
-                        <div class="t-event-desc">Wholesale distribution into LATAM &amp; near-shore</div>
+                        <div class="t-event-title">Global RUO Rollout</div>
+                        <div class="t-event-desc">Wholesale RUO distribution into LATAM &amp; near-shore markets</div>
                     </div>
                 </div>
                 <div class="t-lane">
                     <div class="t-event scale">
                         <span class="t-tag scale">ARR</span>
-                        <div class="t-event-title">Volume Engine at Scale</div>
-                        <div class="t-event-desc">Core wholesale contribution to $450M ARR</div>
+                        <div class="t-event-title">Volume Scale Engine</div>
+                        <div class="t-event-desc">Core wholesale contribution supporting $450M Target ARR</div>
                     </div>
                 </div>
 
@@ -1622,43 +1673,43 @@
                 <div class="t-lane">
                     <div class="t-event beta">
                         <span class="t-tag beta">Beta</span>
-                        <div class="t-event-title">Clinical Pilot Active</div>
-                        <div class="t-event-desc">Select clinics testing telehealth workflows</div>
+                        <div class="t-event-title">Beta Clinical Network</div>
+                        <div class="t-event-desc">300+ 50-state clinicians; beta live with e-script &amp; 503A/B routing</div>
                     </div>
                 </div>
                 <div class="t-lane">
                     <div class="t-event launch">
                         <span class="t-tag launch">Launch</span>
                         <div class="t-event-title">v1.0 Public Release</div>
-                        <div class="t-event-desc">Patient portal + 503A/503B script routing</div>
+                        <div class="t-event-desc">Patient/clinic portals with automated e-script &amp; recurring care plans</div>
                     </div>
                 </div>
                 <div class="t-lane">
                     <div class="t-event launch">
                         <span class="t-tag launch">Feature</span>
-                        <div class="t-event-title">Protocols + Clinical AI/ML</div>
-                        <div class="t-event-desc">HRT, GLP-1 plans with AI/ML care recommendations</div>
+                        <div class="t-event-title">Specialty Protocol Scale</div>
+                        <div class="t-event-desc">Custom HRT, TRT, GLP-1 &amp; biomarker-driven anti-aging care plans</div>
                     </div>
                 </div>
                 <div class="t-lane">
                     <div class="t-event scale">
                         <span class="t-tag scale">Scale</span>
-                        <div class="t-event-title">National Care Network</div>
-                        <div class="t-event-desc">Expanded clinician coverage &amp; care margins</div>
+                        <div class="t-event-title">General Telehealth Expansion</div>
+                        <div class="t-event-desc">Scaling beyond peptides into primary care, derm &amp; tele-specialties</div>
                     </div>
                 </div>
                 <div class="t-lane">
                     <div class="t-event scale">
                         <span class="t-tag scale">Global</span>
                         <div class="t-event-title">International Telehealth</div>
-                        <div class="t-event-desc">RxPath infrastructure into LATAM markets</div>
+                        <div class="t-event-desc">Deploying clinical infrastructure &amp; provider networks into LATAM</div>
                     </div>
                 </div>
                 <div class="t-lane">
                     <div class="t-event scale">
                         <span class="t-tag scale">Standard</span>
-                        <div class="t-event-title">Longevity Care Layer</div>
-                        <div class="t-event-desc">Required clinical rail for personalized medicine</div>
+                        <div class="t-event-title">Longevity Standard</div>
+                        <div class="t-event-desc">Preferred clinical/telehealth layer for personalized medicine</div>
                     </div>
                 </div>
 
@@ -1667,43 +1718,43 @@
                 <div class="t-lane">
                     <div class="t-event beta">
                         <span class="t-tag beta">Beta</span>
-                        <div class="t-event-title">Mobile + LIMS Beta</div>
-                        <div class="t-event-desc">QR scan, GPS tracking &amp; LIMS live</div>
+                        <div class="t-event-title">Active Beta &amp; Provisional IP</div>
+                        <div class="t-event-desc">Provisional patent filed; NM ag/hemp compliance rail positioning</div>
                     </div>
                 </div>
                 <div class="t-lane">
                     <div class="t-event launch">
                         <span class="t-tag launch">Launch</span>
                         <div class="t-event-title">v1.0 Production SaaS</div>
-                        <div class="t-event-desc">Enterprise chain-of-custody release</div>
+                        <div class="t-event-desc">Seat SaaS, LIMS modules &amp; per-scan verification fees</div>
                     </div>
                 </div>
                 <div class="t-lane">
                     <div class="t-event scale">
                         <span class="t-tag scale">IP</span>
-                        <div class="t-event-title">Patent Allowance</div>
-                        <div class="t-event-desc">Core grant for immutable custody tracking</div>
+                        <div class="t-event-title">Vertical Regulatory Shield</div>
+                        <div class="t-event-desc">Deep BioTide/RxPath integration by Q4 2027; utility patent path</div>
                     </div>
                 </div>
                 <div class="t-lane">
                     <div class="t-event scale">
                         <span class="t-tag scale">Scale</span>
-                        <div class="t-event-title">Contracts + Supply AI/ML</div>
-                        <div class="t-event-desc">Gov/enterprise wins with AI/ML risk &amp; routing</div>
+                        <div class="t-event-title">Government &amp; Specialty Contracts</div>
+                        <div class="t-event-desc">State/federal contracts; Kratom, Hemp/Cannabis &amp; HV logistics</div>
                     </div>
                 </div>
                 <div class="t-lane">
                     <div class="t-event scale">
                         <span class="t-tag scale">Expand</span>
                         <div class="t-event-title">Cross-Industry Adoption</div>
-                        <div class="t-event-desc">Pharma, agriculture &amp; high-value logistics</div>
+                        <div class="t-event-desc">Luxury goods, pharma, firearms/ammo &amp; agriculture provenance</div>
                     </div>
                 </div>
                 <div class="t-lane">
                     <div class="t-event scale">
                         <span class="t-tag scale">Standard</span>
-                        <div class="t-event-title">Industry Compliance Layer</div>
-                        <div class="t-event-desc">Required provenance standard for longevity</div>
+                        <div class="t-event-title">Universal Compliance Rail</div>
+                        <div class="t-event-desc">Required provenance standard for regulated high-value commerce</div>
                     </div>
                 </div>
 
@@ -1712,59 +1763,60 @@
                 <div class="t-lane">
                     <div class="t-event live">
                         <span class="t-tag live">Active</span>
-                        <div class="t-event-title">Data Ingestion Live</div>
-                        <div class="t-event-desc">Supply, clinical &amp; market exhaust streaming</div>
+                        <div class="t-event-title">Live Data Ingestion</div>
+                        <div class="t-event-desc">Multi-node streaming: supply chain, clinical outcomes &amp; market exhaust</div>
                     </div>
                 </div>
                 <div class="t-lane">
                     <div class="t-event live">
                         <span class="t-tag live">Active</span>
-                        <div class="t-event-title">Ingestion &amp; Structuring</div>
-                        <div class="t-event-desc">Continued warehouse enrichment &amp; modeling</div>
+                        <div class="t-event-title">Warehouse Enrichment</div>
+                        <div class="t-event-desc">Structuring for predictive AI, clinical underwriting &amp; fraud detection</div>
                     </div>
                 </div>
                 <div class="t-lane">
                     <div class="t-event beta">
                         <span class="t-tag beta">Pilot</span>
                         <div class="t-event-title">AI Dashboard Pilot</div>
-                        <div class="t-event-desc">Risk &amp; underwriting for first partners</div>
+                        <div class="t-event-desc">Underwriting &amp; population health analytics for early partners</div>
                     </div>
                 </div>
                 <div class="t-lane">
                     <div class="t-event scale">
                         <span class="t-tag scale">Monetize</span>
-                        <div class="t-event-title">Enterprise Data Licensing</div>
-                        <div class="t-event-desc">Provenanced outcomes → 85% margins</div>
+                        <div class="t-event-title">Dual Data Stream Licensing</div>
+                        <div class="t-event-desc">Clinical + supply data licenses for pharma R&amp;D and insurers</div>
                     </div>
                 </div>
                 <div class="t-lane">
                     <div class="t-event launch">
                         <span class="t-tag launch">Launch</span>
-                        <div class="t-event-title">Predictive Engine</div>
-                        <div class="t-event-desc">Population health &amp; pharma trial matching</div>
+                        <div class="t-event-title">Predictive Health Engine</div>
+                        <div class="t-event-desc">Enterprise adoption by major health systems &amp; underwriters</div>
                     </div>
                 </div>
                 <div class="t-lane">
                     <div class="t-event scale">
                         <span class="t-tag scale">Exit</span>
-                        <div class="t-event-title">$450M ARR + Liquidity</div>
-                        <div class="t-event-desc">IPO / M&amp;A readiness at $3B–$6B+ valuation</div>
+                        <div class="t-event-title">Exit &amp; Liquidity Event</div>
+                        <div class="t-event-desc">$450M ARR at 85% margins; IPO/M&amp;A at $3B–$6B+ valuation</div>
                     </div>
                 </div>
             </div>
 
             <div class="traction-footer-bar">
-                <div class="tf-item"><span class="tf-num">01</span><span class="tf-text">Wholesale &amp; Telehealth Cash Flow</span></div>
-                <div class="tf-item"><span class="tf-num">02</span><span class="tf-text">Dual SaaS &amp; Care Margin Launch</span></div>
-                <div class="tf-item"><span class="tf-num">03</span><span class="tf-text">Patent Protection &amp; Protocol Scale</span></div>
-                <div class="tf-item"><span class="tf-num">04</span><span class="tf-text">Enterprise Data Monetization</span></div>
-                <div class="tf-item"><span class="tf-num">05</span><span class="tf-text">Global Footprint &amp; Cross-Industry Licensing</span></div>
-                <div class="tf-item"><span class="tf-num">06</span><span class="tf-text">Maximum Valuation &amp; Exit Execution</span></div>
+                <div class="tf-item"><span class="tf-num">01</span><span class="tf-text">Immediate Liquidity, Asset Foundation &amp; Active Ingestion</span></div>
+                <div class="tf-item"><span class="tf-num">02</span><span class="tf-text">Dual SaaS Revenue Activation &amp; Catalog Expansion</span></div>
+                <div class="tf-item"><span class="tf-num">03</span><span class="tf-text">Regulatory Shield, IP Defense &amp; Protocol Scale</span></div>
+                <div class="tf-item"><span class="tf-num">04</span><span class="tf-text">Dual-Stream Data Revenue, Universal Sales &amp; Regtech</span></div>
+                <div class="tf-item"><span class="tf-num">05</span><span class="tf-text">Global Footprint &amp; Cross-Industry Adoption</span></div>
+                <div class="tf-item"><span class="tf-num">06</span><span class="tf-text">$450M ARR, 85% Margins &amp; Exit Execution</span></div>
             </div>
         </div>
     </div>
     <div class="slide-footer">
         <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
+        <span class="deck-updated">Updated Aug 6, 2026 · 2:33 PM CT</span>
         <span><strong>Do Not Distribute</strong></span>
     </div>
 </div>
@@ -1843,6 +1895,7 @@
     </div>
     <div class="slide-footer">
         <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
+        <span class="deck-updated">Updated Aug 6, 2026 · 2:33 PM CT</span>
         <span><strong>Do Not Distribute</strong></span>
     </div>
 </div>
@@ -1943,6 +1996,7 @@
     </div>
     <div class="slide-footer">
         <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
+        <span class="deck-updated">Updated Aug 6, 2026 · 2:33 PM CT</span>
         <span><strong>Do Not Distribute</strong></span>
     </div>
 </div>
@@ -1960,6 +2014,7 @@
     
     <div class="slide-footer">
         <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
+        <span class="deck-updated">Updated Aug 6, 2026 · 2:33 PM CT</span>
         <span><strong>Do Not Distribute</strong></span>
     </div>
 </div>
@@ -1996,6 +2051,7 @@
     </div>
     <div class="slide-footer">
         <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
+        <span class="deck-updated">Updated Aug 6, 2026 · 2:33 PM CT</span>
         <span><strong>Do Not Distribute</strong></span>
     </div>
 </div>
@@ -2072,6 +2128,7 @@
     </div>
     <div class="slide-footer">
         <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
+        <span class="deck-updated">Updated Aug 6, 2026 · 2:33 PM CT</span>
         <span><strong>Do Not Distribute</strong></span>
     </div>
 </div>
@@ -2121,6 +2178,7 @@
     </div>
     <div class="slide-footer">
         <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
+        <span class="deck-updated">Updated Aug 6, 2026 · 2:33 PM CT</span>
         <span><strong>Do Not Distribute</strong></span>
     </div>
 </div>
@@ -2186,6 +2244,7 @@
     </div>
     <div class="slide-footer">
         <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
+        <span class="deck-updated">Updated Aug 6, 2026 · 2:33 PM CT</span>
         <span><strong>Do Not Distribute</strong></span>
     </div>
 </div>
@@ -2238,6 +2297,7 @@
     </div>
     <div class="slide-footer">
         <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
+        <span class="deck-updated">Updated Aug 6, 2026 · 2:33 PM CT</span>
         <span><strong>Do Not Distribute</strong></span>
     </div>
 </div>
@@ -2294,6 +2354,7 @@
     </div>
     <div class="slide-footer">
         <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
+        <span class="deck-updated">Updated Aug 6, 2026 · 2:33 PM CT</span>
         <span><strong>Do Not Distribute</strong></span>
     </div>
 </div>
@@ -2341,6 +2402,7 @@
     </div>
     <div class="slide-footer">
         <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
+        <span class="deck-updated">Updated Aug 6, 2026 · 2:33 PM CT</span>
         <span><strong>Do Not Distribute</strong></span>
     </div>
 </div>
@@ -2384,6 +2446,7 @@
     </div>
     <div class="slide-footer">
         <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
+        <span class="deck-updated">Updated Aug 6, 2026 · 2:33 PM CT</span>
         <span><strong>Do Not Distribute</strong></span>
     </div>
 </div>
