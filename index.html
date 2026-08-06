@@ -289,7 +289,246 @@
         .fw-phone-left { width: 140px; height: 280px; left: -60px; z-index: 2; transform: rotate(-5deg); filter: brightness(0.6); }
         .fw-phone-right { width: 140px; height: 280px; right: -60px; z-index: 2; transform: rotate(5deg); filter: brightness(0.6); }
         .fw-phone img { width: 100%; height: 100%; object-fit: cover; border: none; }
-        
+
+        /* Platform traction swimlane timeline */
+        #slide-traction .content-area {
+            justify-content: flex-start;
+            padding-top: 6px;
+            gap: 0;
+        }
+        .traction-board {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            flex: 1;
+            min-height: 0;
+            gap: 7px;
+        }
+        .traction-intro {
+            font-size: 12px;
+            line-height: 1.4;
+            color: #94a3b8;
+            margin: 0;
+            max-width: 1200px;
+        }
+        .traction-legend {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 2px;
+        }
+        .legend-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: #94a3b8;
+        }
+        .legend-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+        .legend-dot.live { background: #4ade80; box-shadow: 0 0 8px rgba(74,222,128,0.6); }
+        .legend-dot.beta { background: #00FFFF; box-shadow: 0 0 8px rgba(0,255,255,0.6); }
+        .legend-dot.launch { background: #38bdf8; box-shadow: 0 0 8px rgba(56,189,248,0.6); }
+        .legend-dot.scale { background: #c084fc; box-shadow: 0 0 8px rgba(192,132,252,0.55); }
+
+        .traction-grid {
+            display: grid;
+            grid-template-columns: 118px repeat(6, minmax(0, 1fr));
+            grid-template-rows: 34px repeat(4, 1fr);
+            gap: 6px 7px;
+            flex: 1;
+            min-height: 0;
+            align-items: stretch;
+        }
+        .t-corner { }
+        .t-head {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 1px solid #333;
+            padding-bottom: 6px;
+            position: relative;
+        }
+        .t-head::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 15%;
+            right: 15%;
+            height: 2px;
+            background: #00FFFF;
+            box-shadow: 0 0 8px rgba(0,255,255,0.5);
+            opacity: 0.7;
+        }
+        .t-head-phase {
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            color: #64748b;
+            margin-bottom: 2px;
+        }
+        .t-head-date {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.3px;
+            color: #00FFFF;
+            text-shadow: 0 0 6px rgba(0,255,255,0.35);
+            line-height: 1.2;
+        }
+        .t-company {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 8px;
+            background: #0a0a0a;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+        }
+        .t-company .logo-container {
+            width: 100%;
+            height: 34px;
+            margin: 0;
+            padding: 4px 6px;
+        }
+        .t-lane {
+            position: relative;
+            display: flex;
+            align-items: stretch;
+            min-height: 0;
+        }
+        .t-lane::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(0,255,255,0.08), rgba(0,255,255,0.28), rgba(0,255,255,0.08));
+            transform: translateY(-50%);
+            z-index: 0;
+        }
+        .t-event {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 3px;
+            padding: 7px 8px;
+            border-radius: 7px;
+            border: 1px solid #333;
+            background: #111;
+            min-height: 0;
+        }
+        .t-event.empty {
+            background: transparent;
+            border: 1px dashed #222;
+            min-height: 0;
+            opacity: 0.35;
+        }
+        .t-event.empty::after {
+            content: '';
+        }
+        .t-tag {
+            display: inline-flex;
+            align-self: flex-start;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 2px 7px;
+            border-radius: 999px;
+            line-height: 1.4;
+        }
+        .t-tag.live {
+            color: #4ade80;
+            background: rgba(74,222,128,0.12);
+            border: 1px solid rgba(74,222,128,0.45);
+        }
+        .t-tag.beta {
+            color: #00FFFF;
+            background: rgba(0,255,255,0.1);
+            border: 1px solid rgba(0,255,255,0.4);
+        }
+        .t-tag.launch {
+            color: #7dd3fc;
+            background: rgba(56,189,248,0.12);
+            border: 1px solid rgba(56,189,248,0.45);
+        }
+        .t-tag.scale {
+            color: #e9d5ff;
+            background: rgba(192,132,252,0.14);
+            border: 1px solid rgba(192,132,252,0.45);
+        }
+        .t-event-title {
+            font-size: 11px;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+        .t-event-desc {
+            font-size: 9px;
+            line-height: 1.3;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+        .t-event.live {
+            border-color: rgba(74,222,128,0.35);
+            box-shadow: inset 0 0 0 1px rgba(74,222,128,0.08), 0 0 16px rgba(74,222,128,0.08);
+        }
+        .t-event.beta {
+            border-color: rgba(0,255,255,0.3);
+            box-shadow: inset 0 0 0 1px rgba(0,255,255,0.06), 0 0 16px rgba(0,255,255,0.07);
+        }
+        .t-event.launch {
+            border-color: rgba(56,189,248,0.35);
+            box-shadow: inset 0 0 0 1px rgba(56,189,248,0.08), 0 0 16px rgba(56,189,248,0.08);
+        }
+        .t-event.scale {
+            border-color: rgba(192,132,252,0.35);
+            box-shadow: inset 0 0 0 1px rgba(192,132,252,0.08), 0 0 16px rgba(192,132,252,0.08);
+        }
+        .traction-footer-bar {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 6px;
+            margin-top: 2px;
+        }
+        .tf-item {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            padding: 6px 8px;
+            border-radius: 6px;
+            background: rgba(0,255,255,0.04);
+            border: 1px solid rgba(0,255,255,0.15);
+        }
+        .tf-num {
+            font-size: 9px;
+            font-weight: 800;
+            color: #00FFFF;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        .tf-text {
+            font-size: 9px;
+            font-weight: 600;
+            color: #e2e8f0;
+            line-height: 1.25;
+        }
+
         /* Custom slide 1 logic so grid layout doesn't break bleed */
         #slide1 { display: block; padding: 0; }
         #slide1 .bleed-hero-image {
@@ -417,6 +656,14 @@
                 grid-template-columns: repeat(2, 1fr) !important;
             }
 
+            .traction-grid {
+                grid-template-columns: 110px repeat(3, minmax(140px, 1fr)) !important;
+                overflow-x: auto;
+            }
+            .traction-footer-bar {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+
             /* Override common inline grids used across slides */
             .content-area [style*="grid-template-columns: repeat(3"],
             .content-area [style*="grid-template-columns:repeat(3"],
@@ -512,6 +759,15 @@
             .two-column {
                 grid-template-columns: 1fr !important;
             }
+
+            .traction-grid {
+                grid-template-columns: 1fr !important;
+                grid-template-rows: none !important;
+            }
+            .traction-footer-bar {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            .t-head { align-items: flex-start; text-align: left; }
 
             .content-area [style*="grid-template-columns"],
             .slide-container [style*="grid-template-columns"] {
@@ -739,8 +995,8 @@
                 margin-bottom: 16px !important;
             }
 
-            #slide12 .content-area [style*="margin-bottom: 50px"] {
-                margin-bottom: 24px !important;
+            #slide12 .content-area [style*="margin-bottom: 25px"] {
+                margin-bottom: 16px !important;
             }
 
             /* Partner / logo + text rows */
@@ -1273,10 +1529,250 @@
     </div>
 </div>
 
+<!-- SLIDE 09: Platform Traction Timeline -->
+<div class="slide-container theme-dark" id="slide-traction">
+    <div class="slide-header">
+        <div class="slide-number">09</div>
+        <h2 class="slide-title">Platform Traction &amp; Execution Timeline</h2>
+    </div>
+    <div class="content-area">
+        <div class="traction-board">
+            <p class="traction-intro">Live product momentum across the MiJory stack — from wholesale cash flow today through patented SaaS, global expansion, and a $450M ARR ecosystem.</p>
+            <div class="traction-legend">
+                <span class="legend-item"><span class="legend-dot live"></span> Live / Operational</span>
+                <span class="legend-item"><span class="legend-dot beta"></span> Beta / Pilot</span>
+                <span class="legend-item"><span class="legend-dot launch"></span> Commercial Launch</span>
+                <span class="legend-item"><span class="legend-dot scale"></span> Scale / Monetization</span>
+            </div>
+
+            <div class="traction-grid">
+                <div class="t-corner"></div>
+                <div class="t-head">
+                    <div class="t-head-phase">Phase 1</div>
+                    <div class="t-head-date">Q3 2026</div>
+                </div>
+                <div class="t-head">
+                    <div class="t-head-phase">Phase 2</div>
+                    <div class="t-head-date">Q4 2026</div>
+                </div>
+                <div class="t-head">
+                    <div class="t-head-phase">Phase 3</div>
+                    <div class="t-head-date">Q1–Q2 2027</div>
+                </div>
+                <div class="t-head">
+                    <div class="t-head-phase">Phase 4</div>
+                    <div class="t-head-date">Q3 2027–2028</div>
+                </div>
+                <div class="t-head">
+                    <div class="t-head-phase">Phase 5</div>
+                    <div class="t-head-date">2029</div>
+                </div>
+                <div class="t-head">
+                    <div class="t-head-phase">Phase 6</div>
+                    <div class="t-head-date">2030</div>
+                </div>
+
+                <!-- BioTide row -->
+                <div class="t-company"><div class="logo-container"><img src="BioTide Logo.jpg" alt="BioTide"></div></div>
+                <div class="t-lane">
+                    <div class="t-event live">
+                        <span class="t-tag live">Live</span>
+                        <div class="t-event-title">v1.0 Wholesale Portal</div>
+                        <div class="t-event-desc">National B2B order flow with 200+ rep engine</div>
+                    </div>
+                </div>
+                <div class="t-lane">
+                    <div class="t-event launch">
+                        <span class="t-tag launch">Feature</span>
+                        <div class="t-event-title">Catalog Expansion</div>
+                        <div class="t-event-desc">Longevity &amp; wellness compounds added</div>
+                    </div>
+                </div>
+                <div class="t-lane">
+                    <div class="t-event launch">
+                        <span class="t-tag launch">Feature</span>
+                        <div class="t-event-title">Catalog + Sales AI/ML</div>
+                        <div class="t-event-desc">Continued catalog expansion &amp; rep AI/ML selling tools</div>
+                    </div>
+                </div>
+                <div class="t-lane">
+                    <div class="t-event scale">
+                        <span class="t-tag scale">Scale</span>
+                        <div class="t-event-title">Automated Reorder Pipelines</div>
+                        <div class="t-event-desc">High-volume B2B retention &amp; replenishment</div>
+                    </div>
+                </div>
+                <div class="t-lane">
+                    <div class="t-event scale">
+                        <span class="t-tag scale">Global</span>
+                        <div class="t-event-title">LATAM Network Rollout</div>
+                        <div class="t-event-desc">Wholesale distribution into LATAM &amp; near-shore</div>
+                    </div>
+                </div>
+                <div class="t-lane">
+                    <div class="t-event scale">
+                        <span class="t-tag scale">ARR</span>
+                        <div class="t-event-title">Volume Engine at Scale</div>
+                        <div class="t-event-desc">Core wholesale contribution to $450M ARR</div>
+                    </div>
+                </div>
+
+                <!-- RxPath row -->
+                <div class="t-company"><div class="logo-container"><img src="RxPath Logo.jpg" alt="RxPath"></div></div>
+                <div class="t-lane">
+                    <div class="t-event beta">
+                        <span class="t-tag beta">Beta</span>
+                        <div class="t-event-title">Clinical Pilot Active</div>
+                        <div class="t-event-desc">Select clinics testing telehealth workflows</div>
+                    </div>
+                </div>
+                <div class="t-lane">
+                    <div class="t-event launch">
+                        <span class="t-tag launch">Launch</span>
+                        <div class="t-event-title">v1.0 Public Release</div>
+                        <div class="t-event-desc">Patient portal + 503A/503B script routing</div>
+                    </div>
+                </div>
+                <div class="t-lane">
+                    <div class="t-event launch">
+                        <span class="t-tag launch">Feature</span>
+                        <div class="t-event-title">Protocols + Clinical AI/ML</div>
+                        <div class="t-event-desc">HRT, GLP-1 plans with AI/ML care recommendations</div>
+                    </div>
+                </div>
+                <div class="t-lane">
+                    <div class="t-event scale">
+                        <span class="t-tag scale">Scale</span>
+                        <div class="t-event-title">National Care Network</div>
+                        <div class="t-event-desc">Expanded clinician coverage &amp; care margins</div>
+                    </div>
+                </div>
+                <div class="t-lane">
+                    <div class="t-event scale">
+                        <span class="t-tag scale">Global</span>
+                        <div class="t-event-title">International Telehealth</div>
+                        <div class="t-event-desc">RxPath infrastructure into LATAM markets</div>
+                    </div>
+                </div>
+                <div class="t-lane">
+                    <div class="t-event scale">
+                        <span class="t-tag scale">Standard</span>
+                        <div class="t-event-title">Longevity Care Layer</div>
+                        <div class="t-event-desc">Required clinical rail for personalized medicine</div>
+                    </div>
+                </div>
+
+                <!-- TrakPath row -->
+                <div class="t-company"><div class="logo-container"><img src="TrakPath Logo.jpg" alt="TrakPath"></div></div>
+                <div class="t-lane">
+                    <div class="t-event beta">
+                        <span class="t-tag beta">Beta</span>
+                        <div class="t-event-title">Mobile + LIMS Beta</div>
+                        <div class="t-event-desc">QR scan, GPS tracking &amp; LIMS live</div>
+                    </div>
+                </div>
+                <div class="t-lane">
+                    <div class="t-event launch">
+                        <span class="t-tag launch">Launch</span>
+                        <div class="t-event-title">v1.0 Production SaaS</div>
+                        <div class="t-event-desc">Enterprise chain-of-custody release</div>
+                    </div>
+                </div>
+                <div class="t-lane">
+                    <div class="t-event scale">
+                        <span class="t-tag scale">IP</span>
+                        <div class="t-event-title">Patent Allowance</div>
+                        <div class="t-event-desc">Core grant for immutable custody tracking</div>
+                    </div>
+                </div>
+                <div class="t-lane">
+                    <div class="t-event scale">
+                        <span class="t-tag scale">Scale</span>
+                        <div class="t-event-title">Contracts + Supply AI/ML</div>
+                        <div class="t-event-desc">Gov/enterprise wins with AI/ML risk &amp; routing</div>
+                    </div>
+                </div>
+                <div class="t-lane">
+                    <div class="t-event scale">
+                        <span class="t-tag scale">Expand</span>
+                        <div class="t-event-title">Cross-Industry Adoption</div>
+                        <div class="t-event-desc">Pharma, agriculture &amp; high-value logistics</div>
+                    </div>
+                </div>
+                <div class="t-lane">
+                    <div class="t-event scale">
+                        <span class="t-tag scale">Standard</span>
+                        <div class="t-event-title">Industry Compliance Layer</div>
+                        <div class="t-event-desc">Required provenance standard for longevity</div>
+                    </div>
+                </div>
+
+                <!-- Sentynl row -->
+                <div class="t-company"><div class="logo-container"><img src="Sentynl Logo.jpg" alt="Sentynl"></div></div>
+                <div class="t-lane">
+                    <div class="t-event live">
+                        <span class="t-tag live">Active</span>
+                        <div class="t-event-title">Data Ingestion Live</div>
+                        <div class="t-event-desc">Supply, clinical &amp; market exhaust streaming</div>
+                    </div>
+                </div>
+                <div class="t-lane">
+                    <div class="t-event live">
+                        <span class="t-tag live">Active</span>
+                        <div class="t-event-title">Ingestion &amp; Structuring</div>
+                        <div class="t-event-desc">Continued warehouse enrichment &amp; modeling</div>
+                    </div>
+                </div>
+                <div class="t-lane">
+                    <div class="t-event beta">
+                        <span class="t-tag beta">Pilot</span>
+                        <div class="t-event-title">AI Dashboard Pilot</div>
+                        <div class="t-event-desc">Risk &amp; underwriting for first partners</div>
+                    </div>
+                </div>
+                <div class="t-lane">
+                    <div class="t-event scale">
+                        <span class="t-tag scale">Monetize</span>
+                        <div class="t-event-title">Enterprise Data Licensing</div>
+                        <div class="t-event-desc">Provenanced outcomes → 85% margins</div>
+                    </div>
+                </div>
+                <div class="t-lane">
+                    <div class="t-event launch">
+                        <span class="t-tag launch">Launch</span>
+                        <div class="t-event-title">Predictive Engine</div>
+                        <div class="t-event-desc">Population health &amp; pharma trial matching</div>
+                    </div>
+                </div>
+                <div class="t-lane">
+                    <div class="t-event scale">
+                        <span class="t-tag scale">Exit</span>
+                        <div class="t-event-title">$450M ARR + Liquidity</div>
+                        <div class="t-event-desc">IPO / M&amp;A readiness at $3B–$6B+ valuation</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="traction-footer-bar">
+                <div class="tf-item"><span class="tf-num">01</span><span class="tf-text">Wholesale &amp; Telehealth Cash Flow</span></div>
+                <div class="tf-item"><span class="tf-num">02</span><span class="tf-text">Dual SaaS &amp; Care Margin Launch</span></div>
+                <div class="tf-item"><span class="tf-num">03</span><span class="tf-text">Patent Protection &amp; Protocol Scale</span></div>
+                <div class="tf-item"><span class="tf-num">04</span><span class="tf-text">Enterprise Data Monetization</span></div>
+                <div class="tf-item"><span class="tf-num">05</span><span class="tf-text">Global Footprint &amp; Cross-Industry Licensing</span></div>
+                <div class="tf-item"><span class="tf-num">06</span><span class="tf-text">Maximum Valuation &amp; Exit Execution</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
+        <span><strong>Do Not Distribute</strong></span>
+    </div>
+</div>
+
 <!-- SLIDE 10: 5-Year Forecast Overview -->
 <div class="slide-container theme-light" id="slide10">
     <div class="slide-header">
-        <div class="slide-number">09</div>
+        <div class="slide-number">10</div>
         <h2 class="slide-title">5-Year Forecast Overview</h2>
     </div>
     <div class="content-area split-layout" style="gap: 50px; align-items: stretch;">
@@ -1354,7 +1850,7 @@
 <!-- SLIDE 11: The Ask -->
 <div class="slide-container theme-dark" id="slide11">
     <div class="slide-header">
-        <div class="slide-number">10</div>
+        <div class="slide-number">11</div>
         <h2 class="slide-title">Capital Strategy & Ask</h2>
     </div>
     <div class="content-area split-layout" style="gap: 50px;">
@@ -1451,14 +1947,14 @@
     </div>
 </div>
 
-<!-- SLIDE 12: Appendix Title -->
+<!-- APPENDIX TITLE (unnumbered divider) -->
 <div class="slide-container theme-dark" id="slide12">
     <!-- Empty Header forces proper Grid Row placement for the footer -->
     <div class="slide-header" style="border: none; margin-bottom: 0; padding-bottom: 0;"></div>
     
     <div class="content-area" style="align-items: center; text-align: center;">
-        <div style="width: 80px; height: 4px; background: var(--pure-white); margin-bottom: 50px;"></div>
-        <h1 style="font-size: 100px; letter-spacing: 5px; color: var(--pure-white); margin-bottom: 25px;">APPENDIX</h1>
+        <h1 style="font-size: 100px; letter-spacing: 5px; color: var(--pure-white); margin-bottom: 20px;">APPENDIX</h1>
+        <div style="width: 80px; height: 4px; background: var(--pure-white); margin-bottom: 25px;"></div>
         <p class="bright-blue" style="font-size: 18px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">Supplemental Data, Bios, & Disclosures</p>
     </div>
     
@@ -1468,10 +1964,10 @@
     </div>
 </div>
 
-<!-- SLIDE 13: Executive Bios -->
+<!-- SLIDE 12: Executive Bios -->
 <div class="slide-container theme-light" id="slide13">
     <div class="slide-header">
-        <div class="slide-number">11</div>
+        <div class="slide-number">12</div>
         <h2 class="slide-title">Appendix: Executive Leadership Bios</h2>
     </div>
     <div class="content-area">
@@ -1504,10 +2000,10 @@
     </div>
 </div>
 
-<!-- SLIDE 14: Extended Team & Partners -->
+<!-- SLIDE 13: Extended Team & Partners -->
 <div class="slide-container theme-light" id="slide14">
     <div class="slide-header">
-        <div class="slide-number">12</div>
+        <div class="slide-number">13</div>
         <h2 class="slide-title">Appendix: Extended Leadership & Growth Partners</h2>
     </div>
     <div class="content-area" style="justify-content: flex-start; gap: 20px;">
@@ -1548,7 +2044,7 @@
             <h3 style="font-size: 18px; color: var(--blue-accent); border-bottom: 2px solid var(--gray-200); padding-bottom: 8px; margin-bottom: 15px;">Strategic Growth Partners</h3>
             <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 15px;">
                 <div class="tile" style="padding: 18px; border: 2px solid var(--blue-accent); background: var(--blue-light); display: flex; flex-direction: row; align-items: center; gap: 20px;">
-                    <div class="logo-container" style="height: 40px; width: 130px; margin: 0; flex-shrink: 0;"><img src="ClickBank Logo.png" alt="ClickBank"></div>
+                    <div class="logo-container" style="height: 40px; width: 100px; margin: 0; flex-shrink: 0;"><img src="ClickBank Logo.png" alt="ClickBank"></div>
                     <div>
                         <div style="font-size: 10px; font-weight: 800; color: var(--blue-accent); text-transform: uppercase; margin-bottom: 4px;">Strategic GTM Partner</div>
                         <p style="font-size: 12px; margin: 0; line-height: 1.4; color: var(--pure-black); font-weight: 500;">Key to accelerated market growth through direct-to-patient affiliate channels. Drives massive visibility and sales conversions via elite network distribution.</p>
@@ -1580,10 +2076,10 @@
     </div>
 </div>
 
-<!-- SLIDE 15: Advisors -->
+<!-- SLIDE 14: Advisors -->
 <div class="slide-container theme-light" id="slide15">
     <div class="slide-header">
-        <div class="slide-number">13</div>
+        <div class="slide-number">14</div>
         <h2 class="slide-title">Appendix: Strategic Advisory Board</h2>
     </div>
     <div class="content-area">
@@ -1599,7 +2095,7 @@
                 <h3 style="font-size: 16px; margin-bottom: 5px;">Gary McIver</h3>
                 <h4 style="color: var(--gray-500); font-size: 10px; margin-bottom: 10px; letter-spacing: 1px;">Strategic Financial Advisor</h4>
                 <p style="font-size: 11px; color: var(--pure-black); font-weight: 800; margin-bottom: 10px; text-transform: uppercase;">Prior: Deloitte Partner</p>
-                <p style="font-size: 12px; margin: 0; line-height: 1.5;">Senior financial strategist and retired Deloitte Partner in Charge. Decades of Big Four experience across M&A.</p>
+                <p style="font-size: 12px; margin: 0; line-height: 1.5;">Senior financial strategist and retired Deloitte Partner in Charge. Decades of Big Four leadership across consulting, tax, M&A and head of the firms Asia-pacific region.</p>
             </div>
             <div class="tile" style="border-top: 4px solid var(--blue-accent); padding: 20px;">
                 <h3 style="font-size: 16px; margin-bottom: 5px;">Marc Urbaitel</h3>
@@ -1629,10 +2125,10 @@
     </div>
 </div>
 
-<!-- SLIDE 16: Forecast Drivers -->
+<!-- SLIDE 15: Forecast Drivers -->
 <div class="slide-container theme-light" id="slide16">
     <div class="slide-header">
-        <div class="slide-number">14</div>
+        <div class="slide-number">15</div>
         <h2 class="slide-title">Appendix: Forecast Drivers</h2>
     </div>
     <div class="content-area">
@@ -1694,10 +2190,10 @@
     </div>
 </div>
 
-<!-- SLIDE 17: Tech Flow Deep Dive -->
+<!-- SLIDE 16: Tech Flow Deep Dive -->
 <div class="slide-container theme-light" id="slide17">
     <div class="slide-header">
-        <div class="slide-number">15</div>
+        <div class="slide-number">16</div>
         <h2 class="slide-title">Appendix: Full Vertical Capabilities & Flow</h2>
     </div>
     <div class="content-area">
@@ -1718,7 +2214,7 @@
             <div class="tile" style="padding: 20px; border: 1px solid var(--blue-accent); background: var(--blue-light);">
                 <div class="logo-container" style="height: 40px; margin-bottom: 10px;"><img src="TrakPath Logo.jpg" alt="TrakPath"></div>
                 <h4 style="font-size: 13px; margin-bottom: 4px; color: var(--blue-accent);">3. The Trust Layer</h4>
-                <p style="font-size: 12px; margin: 0; line-height: 1.4;">The invisible shield protecting nodes 1 & 2. Provides immutable chain-of-custody, LIMS data, rule enforcement, and cryptographically trusted COAs.</p>
+                <p style="font-size: 12px; margin: 0; line-height: 1.4;">The invisible shield protecting nodes 1 & 2. Provides immutable chain-of-custody, LIMS data, rule enforcement, and cryptographically trusted COA's.</p>
             </div>
 
             <div class="tile" style="padding: 20px; border: 1px solid var(--gray-200);">
@@ -1746,10 +2242,10 @@
     </div>
 </div>
 
-<!-- SLIDE 18: TrakPath Mobile Showcase -->
+<!-- SLIDE 17: TrakPath Mobile Showcase -->
 <div class="slide-container theme-dark" id="slide18">
     <div class="slide-header">
-        <div class="slide-number">16</div>
+        <div class="slide-number">17</div>
         <h2 class="slide-title">Appendix: TrakPath Mobile Visibility</h2>
     </div>
     <div class="content-area split-layout" style="gap: 40px;">
@@ -1777,7 +2273,7 @@
                 <p style="margin: 0; font-size: 13px;">Laboratory Information Management System seamlessly connects batch testing and diagnostic reporting data directly to the physical inventory.</p>
             </div>
             <div>
-                <h3 class="bright-blue" style="font-size: 16px; margin-bottom: 5px; text-transform: uppercase;">Trusted COAs</h3>
+                <h3 class="bright-blue" style="font-size: 16px; margin-bottom: 5px; text-transform: uppercase;">Trusted COA's</h3>
                 <p style="margin: 0; font-size: 13px;">Certificates of Analysis are digitally bound to the unique QR identity of the lot, preventing COA manipulation, shopping, or counterfeiting.</p>
             </div>
         </div>
@@ -1802,10 +2298,10 @@
     </div>
 </div>
 
-<!-- SLIDE 19: Regulatory Edge -->
+<!-- SLIDE 18: Regulatory Edge -->
 <div class="slide-container theme-light" id="slide19">
     <div class="slide-header">
-        <div class="slide-number">17</div>
+        <div class="slide-number">18</div>
         <h2 class="slide-title">Appendix: Regulatory & Compliance Edge</h2>
     </div>
     <div class="content-area">
@@ -1849,10 +2345,10 @@
     </div>
 </div>
 
-<!-- SLIDE 20: Disclaimers -->
+<!-- SLIDE 19: Disclaimers -->
 <div class="slide-container theme-dark" id="slide20">
     <div class="slide-header">
-        <div class="slide-number">18</div>
+        <div class="slide-number">19</div>
         <h2 class="slide-title">Appendix: Safe Harbor & Disclaimers</h2>
     </div>
     <div class="content-area">
