@@ -348,6 +348,13 @@
             display: none;
         }
         /* Platform traction swimlane timeline */
+        #slide-traction {
+            /* Soft amber — readable on black, not blue; glow kept for presence */
+            --traction-accent: #fbbf24;
+            --traction-accent-strong: #fde68a;
+            --traction-accent-dim: rgba(251, 191, 36, 0.35);
+            --traction-accent-glow: rgba(251, 191, 36, 0.5);
+        }
         #slide-traction .content-area {
             justify-content: flex-start;
             padding-top: 6px;
@@ -390,8 +397,8 @@
             border-radius: 50%;
         }
         .legend-dot.live { background: #4ade80; box-shadow: 0 0 8px rgba(74,222,128,0.6); }
-        .legend-dot.beta { background: #00FFFF; box-shadow: 0 0 8px rgba(0,255,255,0.6); }
-        .legend-dot.launch { background: #38bdf8; box-shadow: 0 0 8px rgba(56,189,248,0.6); }
+        .legend-dot.beta { background: var(--traction-accent, #7dd3fc); box-shadow: 0 0 8px var(--traction-accent-glow); }
+        .legend-dot.launch { background: var(--traction-accent, #7dd3fc); box-shadow: 0 0 8px var(--traction-accent-glow); }
         .legend-dot.scale { background: #c084fc; box-shadow: 0 0 8px rgba(192,132,252,0.55); }
 
         .traction-grid {
@@ -421,24 +428,24 @@
             left: 15%;
             right: 15%;
             height: 2px;
-            background: #00FFFF;
-            box-shadow: 0 0 8px rgba(0,255,255,0.5);
-            opacity: 0.7;
+            background: var(--traction-accent, #fbbf24);
+            box-shadow: 0 0 10px var(--traction-accent-glow), 0 0 18px rgba(251, 191, 36, 0.35);
+            opacity: 0.9;
         }
         .t-head-phase {
             font-size: 9px;
             font-weight: 800;
             letter-spacing: 1.4px;
             text-transform: uppercase;
-            color: #64748b;
+            color: #94a3b8;
             margin-bottom: 2px;
         }
         .t-head-date {
             font-size: 10px;
             font-weight: 800;
             letter-spacing: 0.3px;
-            color: #00FFFF;
-            text-shadow: 0 0 6px rgba(0,255,255,0.35);
+            color: var(--traction-accent-strong, #fde68a);
+            text-shadow: 0 0 8px var(--traction-accent-glow), 0 0 14px rgba(251, 191, 36, 0.35);
             line-height: 1.2;
         }
         .t-company {
@@ -469,7 +476,7 @@
             right: 0;
             top: 50%;
             height: 2px;
-            background: linear-gradient(90deg, rgba(0,255,255,0.08), rgba(0,255,255,0.28), rgba(0,255,255,0.08));
+            background: linear-gradient(90deg, rgba(251,191,36,0.08), rgba(251,191,36,0.32), rgba(251,191,36,0.08));
             transform: translateY(-50%);
             z-index: 0;
         }
@@ -516,14 +523,16 @@
             border: 1px solid rgba(74,222,128,0.45);
         }
         .t-tag.beta {
-            color: #00FFFF;
-            background: rgba(0,255,255,0.1);
-            border: 1px solid rgba(0,255,255,0.4);
+            color: var(--traction-accent-strong, #fde68a);
+            background: rgba(251,191,36,0.12);
+            border: 1px solid rgba(251,191,36,0.45);
+            text-shadow: 0 0 8px rgba(251,191,36,0.35);
         }
         .t-tag.launch {
-            color: #7dd3fc;
-            background: rgba(56,189,248,0.12);
-            border: 1px solid rgba(56,189,248,0.45);
+            color: var(--traction-accent-strong, #fde68a);
+            background: rgba(251,191,36,0.12);
+            border: 1px solid rgba(251,191,36,0.5);
+            text-shadow: 0 0 8px rgba(251,191,36,0.35);
         }
         .t-tag.scale {
             color: #e9d5ff;
@@ -549,12 +558,12 @@
             box-shadow: inset 0 0 0 1px rgba(74,222,128,0.08), 0 0 16px rgba(74,222,128,0.08);
         }
         .t-event.beta {
-            border-color: rgba(0,255,255,0.3);
-            box-shadow: inset 0 0 0 1px rgba(0,255,255,0.06), 0 0 16px rgba(0,255,255,0.07);
+            border-color: rgba(251,191,36,0.4);
+            box-shadow: inset 0 0 0 1px rgba(251,191,36,0.08), 0 0 16px rgba(251,191,36,0.12);
         }
         .t-event.launch {
-            border-color: rgba(56,189,248,0.35);
-            box-shadow: inset 0 0 0 1px rgba(56,189,248,0.08), 0 0 16px rgba(56,189,248,0.08);
+            border-color: rgba(251,191,36,0.4);
+            box-shadow: inset 0 0 0 1px rgba(251,191,36,0.08), 0 0 16px rgba(251,191,36,0.12);
         }
         .t-event.scale {
             border-color: rgba(192,132,252,0.35);
@@ -572,16 +581,17 @@
             gap: 3px;
             padding: 6px 8px;
             border-radius: 6px;
-            background: rgba(0,255,255,0.04);
-            border: 1px solid rgba(0,255,255,0.15);
+            background: rgba(251,191,36,0.06);
+            border: 1px solid rgba(251,191,36,0.22);
         }
         .tf-num {
             font-size: 9px;
             font-weight: 800;
-            color: #00FFFF;
+            color: var(--traction-accent-strong, #fde68a);
             letter-spacing: 1px;
             text-transform: uppercase;
             white-space: nowrap;
+            text-shadow: 0 0 8px var(--traction-accent-glow);
         }
         .tf-text {
             font-size: 8px;
@@ -894,7 +904,8 @@
                 font-weight: 800;
                 letter-spacing: 0.7px;
                 text-transform: uppercase;
-                color: #00FFFF;
+                color: var(--traction-accent-strong, #fde68a);
+                text-shadow: 0 0 8px var(--traction-accent-glow);
                 margin: 1px 0 2px;
             }
             #slide-traction .t-phase span:last-child {
