@@ -224,6 +224,9 @@
         .tile { border-radius: 8px; padding: 25px; display: flex; flex-direction: column; height: 100%; justify-content: center;}
         .icon-box { width: 40px; height: 40px; color: var(--blue-accent); display: flex; align-items: center; justify-content: flex-start; font-size: 24px; margin-bottom: 15px; }
         .theme-dark .icon-box { color: #00FFFF; text-shadow: 0 0 10px rgba(0,255,255,0.6); }
+        /* Prefer cyan accents on dark slides — navy blue-accent is hard to read on black */
+        .theme-dark .blue-accent-safe,
+        .theme-dark strong[style*="blue-accent"] { color: #00FFFF !important; }
 
         .logo-container { display: flex; align-items: center; justify-content: flex-start; width: 100%; margin-bottom: 15px; }
         .logo-container img { max-width: 100%; max-height: 100%; object-fit: contain; object-position: left center; display: block; }
@@ -310,7 +313,7 @@
         .pie-container { position: relative; width: 200px; height: 200px; display: flex; align-items: center; justify-content: center; }
         .pie-chart {
             width: 100%; height: 100%; border-radius: 50%;
-            background: conic-gradient(#00FFFF 0% 27.5%, #60a5fa 27.5% 47.5%, #3b82f6 47.5% 67.5%, #2563eb 67.5% 82.5%, #1d4ed8 82.5% 92.5%, #facc15 92.5% 100%);
+            background: conic-gradient(#00FFFF 0% 27.5%, #7dd3fc 27.5% 47.5%, #38bdf8 47.5% 67.5%, #60a5fa 67.5% 82.5%, #93c5fd 82.5% 92.5%, #facc15 92.5% 100%);
             border: none; transform: rotate(-10deg); box-shadow: 0 0 20px rgba(0,255,255,0.4);
         }
         .pie-inner { position: absolute; width: 120px; height: 120px; background-color: var(--pure-black); border-radius: 50%; z-index: 2; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 10px 20px rgba(0,0,0,0.8); }
@@ -1403,7 +1406,7 @@
                     <img src="biotide home page.jpg" alt="BioTide UI">
                 </div>
                 <h4 style="margin: 10px 0 5px 0; font-size: 13px;">Supply & Wholesale</h4>
-                <p style="font-size: 12px; margin: 0; line-height: 1.4;">Marketplace / network model. Brokers high-margin wholesale peptide supply without holding inventory or taking on spoilage risk.</p>
+                <p style="font-size: 12px; margin: 0; line-height: 1.4;">Marketplace / network model. Brokers high-margin wholesale peptide supply without holding inventory or taking on spoilage risk. Launching a peptide cosmetic line for online and retail store channels.</p>
             </div>
             
             <!-- RxPath -->
@@ -1447,7 +1450,7 @@
     <div class="content-area split-layout" style="align-items: flex-start;">
         <div style="padding-right: 20px;">
             <div class="icon-box"><i class="fa-solid fa-building"></i></div>
-            <div style="font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #4ade80; margin-bottom: 8px;">High-Margin Tech &amp; Data Tollbooths (Zero Inventory Risk)</div>
+            <div style="font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #00FFFF; margin-bottom: 8px; text-shadow: 0 0 8px rgba(0,255,255,0.45);">High-Margin Tech &amp; Data Tollbooths (Zero Inventory Risk)</div>
             <h3 class="bright-blue" style="margin-bottom: 15px; font-size: 26px;">Wholly Owned Entities</h3>
             <p style="margin-bottom: 25px; font-size: 15px;">Core operating companies solely owned by MiJory Wellness Enterprises, creating our proprietary vertical stack.</p>
             
@@ -1599,28 +1602,33 @@
         <h2 class="slide-title">Strategic Partnerships: Maximizing Margins &amp; Eliminating CapEx</h2>
     </div>
     <div class="content-area">
-        <p style="margin-bottom: 30px; font-size: 18px; max-width: 1000px; color: var(--pure-black);">We engineer unassailable unit economics by locking in elite diagnostic and manufacturing networks as strategic partners—pricing power of vertical integration, without owning the physical stack.</p>
+        <p style="margin-bottom: 12px; font-size: 17px; max-width: 1100px; color: var(--pure-black); line-height: 1.45;">Strategic partnerships lock in unmatched unit economics—base-level procurement and diagnostic pricing—without MiJory taking on manufacturing CapEx, inventory, or spoilage risk.</p>
+        <p style="margin-bottom: 22px; font-size: 15px; max-width: 1100px; color: var(--gray-600); line-height: 1.45;">Pricing power of vertical integration; partners own the physical stack. We capture the high-margin routing and tollbooth layer.</p>
         
-        <div class="two-column">
-            <div class="tile" style="padding: 30px;">
-                <div class="logo-container" style="width: 250px; height: 60px; margin-bottom: 15px;"><img src="PlexusDx Logo.jpg" alt="PlexusDx"></div>
-                <a href="https://plexusdx.com/" target="_blank" rel="noopener noreferrer" class="partner-link" style="font-size: 14px; font-weight: 600; margin-bottom: 15px; display: inline-block;">plexusdx.com <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px;"></i></a>
-                <h3 style="margin-bottom: 15px; font-size: 22px; color: var(--blue-accent);">High Biomarker Test Margins</h3>
-                <p style="margin-bottom: 20px; font-size: 15px; line-height: 1.5;">Our strategic partnership with PlexusDx grants us unprecedented access to high-complexity clinical testing at dramatically reduced wholesale pricing—partner labs bear the physical CapEx and overhead.</p>
-                <ul class="bullet-list">
-                    <li><strong style="color: var(--pure-black);">Lucrative Arbitrage:</strong> We capture exceptional margins on every biomarker, genetic, and nutrigenomic test ordered through our network.</li>
-                    <li><strong style="color: var(--pure-black);">Clinical Precision:</strong> Elevates the perceived value of our telehealth platform via rapid, medically defensible laboratory results.</li>
+        <div class="two-column" style="align-items: stretch;">
+            <div class="tile" style="padding: 28px; display: flex; flex-direction: column;">
+                <div class="logo-container" style="width: 100%; max-width: 250px; height: 56px; margin-bottom: 10px;"><img src="PlexusDx Logo.jpg" alt="PlexusDx"></div>
+                <div style="min-height: 22px; margin-bottom: 12px;">
+                    <a href="https://plexusdx.com/" target="_blank" rel="noopener noreferrer" class="partner-link" style="font-size: 14px; font-weight: 600; display: inline-block;">plexusdx.com <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px;"></i></a>
+                </div>
+                <h3 style="margin-bottom: 12px; font-size: 20px; color: var(--blue-accent);">High Biomarker Test Margins</h3>
+                <p style="margin-bottom: 16px; font-size: 14px; line-height: 1.5; flex: 1;">Unprecedented access to high-complexity clinical testing at dramatically reduced wholesale pricing—partner labs bear the physical CapEx and overhead.</p>
+                <ul class="bullet-list" style="margin-top: auto;">
+                    <li><strong style="color: var(--pure-black);">Lucrative Arbitrage:</strong> Exceptional margins on every biomarker, genetic, and nutrigenomic test ordered through our network.</li>
+                    <li><strong style="color: var(--pure-black);">Clinical Precision:</strong> Elevates telehealth value via rapid, medically defensible laboratory results.</li>
                 </ul>
             </div>
             
-            <div class="tile" style="padding: 30px;">
-                <div class="logo-container" style="width: 250px; height: 60px; margin-bottom: 15px;"><img src="Confidential Manufacturer Logo.png" alt="Manufacturer"></div>
-                <span style="font-size: 14px; font-weight: 600; color: var(--gray-500); margin-bottom: 15px; display: inline-block;">Exclusive 503A & 503B Supply Partnership</span>
-                <h3 style="margin-bottom: 15px; font-size: 22px; color: var(--blue-accent);">High Product Margins, Zero CapEx</h3>
-                <p style="margin-bottom: 20px; font-size: 15px; line-height: 1.5;">Exclusive agreements deliver base-level procurement costs and guaranteed capacity—unmatched unit economics. Because the manufacturer owns the facility and supply chain, MiJory carries zero manufacturing CapEx, zero cold-chain spoilage risk, and zero physical inventory.</p>
-                <ul class="bullet-list">
-                    <li><strong style="color: var(--pure-black);">Supply Dominance:</strong> Eliminates middleman markups so we procure top-tier sterile peptides at base-level cost while never touching the vial.</li>
-                    <li><strong style="color: var(--pure-black);">Scale Capacity:</strong> Partner-owned capacity fulfills bulk B2B and direct-to-patient scripts as demand scales—without MiJory CapEx.</li>
+            <div class="tile" style="padding: 28px; display: flex; flex-direction: column;">
+                <div class="logo-container" style="width: 100%; max-width: 250px; height: 56px; margin-bottom: 10px;"><img src="Confidential Manufacturer Logo.png" alt="Manufacturer"></div>
+                <div style="min-height: 22px; margin-bottom: 12px;">
+                    <span style="font-size: 14px; font-weight: 600; color: var(--gray-500); display: inline-block;">Exclusive 503A &amp; 503B Supply Partnership</span>
+                </div>
+                <h3 style="margin-bottom: 12px; font-size: 20px; color: var(--blue-accent);">High Product Margins, Zero CapEx</h3>
+                <p style="margin-bottom: 16px; font-size: 14px; line-height: 1.5; flex: 1;">Exclusive agreements deliver base-level procurement costs and guaranteed capacity. The manufacturer owns the facility and supply chain—MiJory carries zero manufacturing CapEx, zero cold-chain spoilage risk, and zero physical inventory.</p>
+                <ul class="bullet-list" style="margin-top: auto;">
+                    <li><strong style="color: var(--pure-black);">Supply Dominance:</strong> Base-level sterile peptide cost while never touching the vial.</li>
+                    <li><strong style="color: var(--pure-black);">Scale Capacity:</strong> Partner-owned capacity fulfills B2B and D2C scripts as demand scales—without MiJory CapEx.</li>
                 </ul>
             </div>
         </div>
@@ -1659,7 +1667,7 @@
             <div class="tile" style="align-items: flex-start; padding: 25px;">
                 <div class="logo-container" style="height: 40px; margin-bottom: 15px; width: 180px;"><img src="BioTide Logo.jpg" alt="BioTide"></div>
                 <h3 style="font-size: 18px; margin-bottom: 5px;">3. BioTide &amp; RxPath Tollbooths</h3>
-                <p style="font-size: 13px; margin: 0; line-height: 1.4;">Revenue via transaction fees and margins on routed wholesale and clinical orders—marketplace and telehealth routing without holding inventory.</p>
+                <p style="font-size: 13px; margin: 0; line-height: 1.4;">Revenue via transaction fees and margins on routed wholesale and clinical orders—plus a peptide cosmetic line selling online and into retail—without holding inventory.</p>
             </div>
             
             <div class="tile" style="align-items: flex-start; padding: 25px;">
@@ -1801,7 +1809,7 @@
                         <span class="t-tag launch">Feature</span>
                         <div class="t-phase"><span>Phase 2</span><span>Q4 2026</span></div>
                         <div class="t-event-title">RUO Catalog Expansion</div>
-                        <div class="t-event-desc">Beyond peptides into research compounds, longevity molecules &amp; bioreagents</div>
+                        <div class="t-event-desc">Beyond peptides into research compounds, longevity molecules &amp; bioreagents; peptide cosmetic line for online + retail</div>
                     </div>
                 </div>
                 <div class="t-lane">
@@ -2098,7 +2106,7 @@
         
         <div style="display: flex; flex-direction: column; justify-content: center;">
             <h4 class="bright-blue" style="font-size: 15px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">Target Capital Raise</h4>
-            <div style="font-size: 100px; font-weight: 800; color: var(--pure-white); line-height: 1; letter-spacing: -0.05em; margin-bottom: 15px;">$7M</div>
+            <div style="font-size: 100px; font-weight: 800; color: var(--pure-white); line-height: 1; letter-spacing: -0.05em; margin-bottom: 15px;">$10M</div>
             
             <ul class="bullet-list" style="margin-top: 10px;">
                 <li><strong style="color: var(--pure-white);">Commercial &amp; Affiliate Scale:</strong> Aggressive go-to-market via targeted ads, training, and education, plus joint efforts with ClickBank on affiliate marketing—revenue-share aligned so spend compounds into scale, not overhead.</li>
@@ -2144,37 +2152,37 @@
                             <td style="width: 20px; padding: 6px 8px; border: none;"><div style="width: 12px; height: 12px; background: #00FFFF; border-radius: 50%; box-shadow: 0 0 5px #00FFFF;"></div></td>
                             <td style="padding: 6px 8px; color: var(--pure-white); font-weight: 700; font-size: 13px; border: none;">Go-To-Market</td>
                             <td style="padding: 6px 8px; text-align: right; font-size: 13px; border: none;">27.5%</td>
-                            <td style="padding: 6px 8px; text-align: right; color: var(--pure-white); font-weight: 800; font-size: 13px; border: none;">$1.925M</td>
+                            <td style="padding: 6px 8px; text-align: right; color: var(--pure-white); font-weight: 800; font-size: 13px; border: none;">$2.75M</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 20px; padding: 6px 8px; border: none;"><div style="width: 12px; height: 12px; background: #7dd3fc; border-radius: 50%;"></div></td>
+                            <td style="padding: 6px 8px; color: var(--pure-white); font-weight: 700; font-size: 13px; border: none;">Supply Chain</td>
+                            <td style="padding: 6px 8px; text-align: right; font-size: 13px; border: none;">20.0%</td>
+                            <td style="padding: 6px 8px; text-align: right; color: var(--pure-white); font-weight: 800; font-size: 13px; border: none;">$2.0M</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 20px; padding: 6px 8px; border: none;"><div style="width: 12px; height: 12px; background: #38bdf8; border-radius: 50%;"></div></td>
+                            <td style="padding: 6px 8px; color: var(--pure-white); font-weight: 700; font-size: 13px; border: none;">Key Hires</td>
+                            <td style="padding: 6px 8px; text-align: right; font-size: 13px; border: none;">20.0%</td>
+                            <td style="padding: 6px 8px; text-align: right; color: var(--pure-white); font-weight: 800; font-size: 13px; border: none;">$2.0M</td>
                         </tr>
                         <tr>
                             <td style="width: 20px; padding: 6px 8px; border: none;"><div style="width: 12px; height: 12px; background: #60a5fa; border-radius: 50%;"></div></td>
-                            <td style="padding: 6px 8px; color: var(--pure-white); font-weight: 700; font-size: 13px; border: none;">Supply Chain</td>
-                            <td style="padding: 6px 8px; text-align: right; font-size: 13px; border: none;">20.0%</td>
-                            <td style="padding: 6px 8px; text-align: right; color: var(--pure-white); font-weight: 800; font-size: 13px; border: none;">$1.4M</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 20px; padding: 6px 8px; border: none;"><div style="width: 12px; height: 12px; background: #3b82f6; border-radius: 50%;"></div></td>
-                            <td style="padding: 6px 8px; color: var(--pure-white); font-weight: 700; font-size: 13px; border: none;">Key Hires</td>
-                            <td style="padding: 6px 8px; text-align: right; font-size: 13px; border: none;">20.0%</td>
-                            <td style="padding: 6px 8px; text-align: right; color: var(--pure-white); font-weight: 800; font-size: 13px; border: none;">$1.4M</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 20px; padding: 6px 8px; border: none;"><div style="width: 12px; height: 12px; background: #2563eb; border-radius: 50%;"></div></td>
                             <td style="padding: 6px 8px; color: var(--pure-white); font-weight: 700; font-size: 13px; border: none;">Platform Tech</td>
                             <td style="padding: 6px 8px; text-align: right; font-size: 13px; border: none;">15.0%</td>
-                            <td style="padding: 6px 8px; text-align: right; color: var(--pure-white); font-weight: 800; font-size: 13px; border: none;">$1.05M</td>
+                            <td style="padding: 6px 8px; text-align: right; color: var(--pure-white); font-weight: 800; font-size: 13px; border: none;">$1.5M</td>
                         </tr>
                         <tr>
-                            <td style="width: 20px; padding: 6px 8px; border: none;"><div style="width: 12px; height: 12px; background: #1d4ed8; border-radius: 50%;"></div></td>
+                            <td style="width: 20px; padding: 6px 8px; border: none;"><div style="width: 12px; height: 12px; background: #93c5fd; border-radius: 50%;"></div></td>
                             <td style="padding: 6px 8px; color: var(--pure-white); font-weight: 700; font-size: 13px; border: none;">Ops & Runway</td>
                             <td style="padding: 6px 8px; text-align: right; font-size: 13px; border: none;">10.0%</td>
-                            <td style="padding: 6px 8px; text-align: right; color: var(--pure-white); font-weight: 800; font-size: 13px; border: none;">$0.7M</td>
+                            <td style="padding: 6px 8px; text-align: right; color: var(--pure-white); font-weight: 800; font-size: 13px; border: none;">$1.0M</td>
                         </tr>
                         <tr>
                             <td style="border: none; width: 20px; padding: 6px 8px;"><div style="width: 12px; height: 12px; background: #facc15; border-radius: 50%; box-shadow: 0 0 5px #facc15;"></div></td>
                             <td style="border: none; padding: 6px 8px; color: var(--pure-white); font-weight: 700; font-size: 13px;">Clinical R&D</td>
                             <td style="border: none; padding: 6px 8px; text-align: right; font-size: 13px;">7.5%</td>
-                            <td style="border: none; padding: 6px 8px; text-align: right; color: var(--pure-white); font-weight: 800; font-size: 13px;">$0.525M</td>
+                            <td style="border: none; padding: 6px 8px; text-align: right; color: var(--pure-white); font-weight: 800; font-size: 13px;">$0.75M</td>
                         </tr>
                     </tbody>
                 </table>
