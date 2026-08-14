@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="deck-updated" content="2026-08-07T11:28-05:00">
     <title>MiJory Wellness - VC/PE Investor Presentation</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -649,6 +649,59 @@
             font-weight: 500;
             line-height: 1.6;
         }
+        .brief-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            width: auto;
+            max-width: 100%;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        .brief-links-label {
+            color: var(--gray-600);
+            letter-spacing: 0.3px;
+            margin-right: 4px;
+        }
+        .brief-links a {
+            text-decoration: none;
+            color: var(--blue-accent);
+            border: 1px solid var(--gray-300);
+            background: var(--pure-white);
+            padding: 8px 12px;
+            border-radius: 999px;
+            min-height: 40px;
+            display: inline-flex;
+            align-items: center;
+        }
+        .brief-links a:hover {
+            border-color: var(--blue-accent);
+            background: var(--blue-light);
+        }
+        #slide1 .brief-links {
+            width: auto;
+            max-width: 550px;
+            margin-top: 22px;
+        }
+        .theme-dark .brief-links-label { color: var(--gray-400); }
+        .theme-dark .brief-links a {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.18);
+            color: var(--blue-bright);
+        }
+        .theme-dark .brief-links a:hover {
+            background: rgba(0,255,255,0.12);
+            border-color: var(--blue-bright);
+        }
+        #slide20 .brief-links {
+            width: auto;
+            max-width: none;
+            margin-top: 18px;
+        }
+        @media print {
+            .brief-links { display: none !important; }
+        }
         #slide1 .slide-footer.hero-footer {
             position: absolute;
             bottom: 25px;
@@ -763,7 +816,7 @@
             }
 
             #slide1 .bleed-content {
-                padding: 40px 32px 80px;
+                padding: 40px 32px 28px;
             }
 
             #slide1 .bleed-hero-image {
@@ -773,11 +826,15 @@
 
             #slide1 .hero-logo { height: 120px; max-width: 360px; margin-bottom: 16px; }
             #slide1 .hero-title { font-size: 36px; margin-bottom: 16px; }
-            #slide1 .hero-sub { font-size: 16px; }
+            #slide1 .hero-sub { font-size: 16px; max-width: none; }
+            #slide1 .brief-links { max-width: none; margin-top: 18px; }
             #slide1 .slide-footer.hero-footer {
-                left: 32px;
-                right: 32px;
-                bottom: 16px;
+                position: relative;
+                left: auto;
+                right: auto;
+                bottom: auto;
+                width: 100%;
+                margin-top: 24px;
                 flex-wrap: wrap;
                 gap: 8px;
             }
@@ -797,7 +854,7 @@
 
         @media screen and (max-width: 700px) {
             body {
-                padding: 12px 0 32px;
+                padding: 12px 0 calc(32px + env(safe-area-inset-bottom));
                 gap: 16px;
             }
 
@@ -970,7 +1027,7 @@
             }
 
             #slide1 .bleed-content {
-                padding: 24px 18px 72px;
+                padding: 24px 18px 24px;
             }
 
             #slide1 .bleed-hero-image {
@@ -999,12 +1056,23 @@
                 max-width: none;
             }
 
+            #slide1 .brief-links {
+                margin-top: 14px;
+                gap: 8px;
+            }
+
             #slide1 .slide-footer.hero-footer {
-                left: 18px;
-                right: 18px;
-                bottom: 12px;
-                position: absolute;
+                position: relative;
+                left: auto;
+                right: auto;
+                bottom: auto;
+                width: 100%;
+                margin-top: 20px;
                 font-size: 9px;
+            }
+
+            #slide20 .brief-links {
+                margin-top: 12px;
             }
 
             /* Tables: horizontal scroll instead of crushing */
@@ -1240,6 +1308,7 @@
             }
 
             #slide1 .hero-title { font-size: 22px !important; }
+            #slide1 .brief-links a { font-size: 11px; padding: 8px 10px; }
             .slide-header h2,
             .slide-title { font-size: 18px !important; }
             .metric-value { font-size: 30px; }
@@ -1265,6 +1334,9 @@
             <div class="hero-kicker">Investor Presentation</div>
             <h1 class="hero-title">End-to-End Infrastructure for Peptides, Longevity, and Personalized Health</h1>
             <p class="hero-sub">A full-vertical infrastructure platform connecting product testing, wholesale supply, and verified patient outcomes.</p>
+            <nav class="brief-links" aria-label="Investor brief">
+                <a href="brief/index.html">Investor brief</a>
+            </nav>
             
             <div class="slide-footer hero-footer">
                 <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
@@ -2660,6 +2732,9 @@
                 </p>
             </div>
         </div>
+        <nav class="brief-links" aria-label="Investor brief">
+            <a href="brief/index.html">Investor brief</a>
+        </nav>
     </div>
     <div class="slide-footer">
         <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>

@@ -33,3 +33,12 @@ In the repo **Settings → Pages**:
 After Pages is enabled, the site will be at:
 
 `https://sentynl-io.github.io/mijory-deck/`
+
+A separate 4-page investor brief (not the core deck) lives at:
+
+- `https://sentynl-io.github.io/mijory-deck/brief/` — Trust infrastructure
+- `https://sentynl-io.github.io/mijory-deck/brief/2.html` — Revenue events
+- `https://sentynl-io.github.io/mijory-deck/brief/3.html` — Year 1 path
+- `https://sentynl-io.github.io/mijory-deck/brief/4.html` — Mix shift
+
+The main deck (`index.html`) links to `brief/index.html`.
