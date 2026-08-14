@@ -24,8 +24,8 @@
 
         <h2>Mix shift — commerce vs. tech &amp; SaaS</h2>
         <div class="legend-inline">
-            <span><i class="swatch" style="background:var(--navy)"></i>Commerce (BioTide + RxPath)</span>
-            <span><i class="swatch" style="background:var(--gold)"></i>Tech &amp; SaaS (TrakPath + Sentynl)</span>
+            <span><i class="swatch" style="background:var(--commerce)"></i>Commerce (BioTide + RxPath)</span>
+            <span><i class="swatch" style="background:var(--saas)"></i>Tech &amp; SaaS (TrakPath + Sentynl)</span>
         </div>
         <div class="mix">
             <div class="mix-row"><label>Year 1</label><div class="bar"><div class="c" style="width:90%"></div><div class="t" style="width:10%"></div></div><em>90% / 10% · Foundation</em></div>
@@ -37,10 +37,10 @@
 
         <h2>Illustrative growth by company</h2>
         <div class="legend-inline">
-            <span><i class="swatch" style="background:#0f766e"></i>BioTide</span>
-            <span><i class="swatch" style="background:#5b4b9a"></i>RxPath</span>
-            <span><i class="swatch" style="background:#1d4ed8"></i>TrakPath</span>
-            <span><i class="swatch" style="background:#d4a017"></i>Sentynl</span>
+            <span><i class="swatch" style="background:var(--co-bio)"></i>BioTide</span>
+            <span><i class="swatch" style="background:var(--co-rx)"></i>RxPath</span>
+            <span><i class="swatch" style="background:var(--co-trak)"></i>TrakPath</span>
+            <span><i class="swatch" style="background:var(--co-sent)"></i>Sentynl</span>
         </div>
         <div class="growth-chart">
             <svg viewBox="0 0 880 360" role="img" aria-label="Illustrative recognized revenue by company, Years 1 through 5">
@@ -60,20 +60,20 @@
                 <text class="axis" x="566.5" y="348" text-anchor="middle">Y4</text>
                 <text class="axis" x="736" y="348" text-anchor="middle">Y5</text>
                 <line class="flag-line" x1="397" y1="24" x2="397" y2="312"/>
-                <rect x="218" y="8" width="358" height="22" rx="11" fill="#ecfdf5" stroke="#99f6e4"/>
+                <rect x="218" y="8" width="358" height="22" rx="11" fill="#e0f2fe" stroke="#7dd3fc"/>
                 <text class="flag-label" x="397" y="23" text-anchor="middle">Y3 · Tech &amp; SaaS overtakes commerce</text>
-                <polyline class="line" stroke="#0f766e" points="58.0,306.7 227.5,298.0 397.0,288.0 566.5,278.7 736.0,267.6"/>
-                <polyline class="line" stroke="#5b4b9a" points="58.0,307.0 227.5,298.7 397.0,289.2 566.5,280.5 736.0,270.0"/>
-                <polyline class="line" stroke="#1d4ed8" points="58.0,311.6 227.5,307.7 397.0,294.7 566.5,274.2 736.0,242.9"/>
-                <polyline class="line" stroke="#d4a017" points="58.0,311.9 227.5,304.8 397.0,271.7 566.5,198.6 736.0,35.5"/>
-                <g fill="#0f766e"><circle cx="58" cy="306.7" r="3.5"/><circle cx="227.5" cy="298" r="3.5"/><circle cx="397" cy="288" r="3.5"/><circle cx="566.5" cy="278.7" r="3.5"/><circle cx="736" cy="267.6" r="3.5"/></g>
-                <g fill="#5b4b9a"><circle cx="58" cy="307" r="3.5"/><circle cx="227.5" cy="298.7" r="3.5"/><circle cx="397" cy="289.2" r="3.5"/><circle cx="566.5" cy="280.5" r="3.5"/><circle cx="736" cy="270" r="3.5"/></g>
-                <g fill="#1d4ed8"><circle cx="58" cy="311.6" r="3.5"/><circle cx="227.5" cy="307.7" r="3.5"/><circle cx="397" cy="294.7" r="3.5"/><circle cx="566.5" cy="274.2" r="3.5"/><circle cx="736" cy="242.9" r="3.5"/></g>
-                <g fill="#d4a017"><circle cx="58" cy="311.9" r="3.5"/><circle cx="227.5" cy="304.8" r="3.5"/><circle cx="397" cy="271.7" r="3.5"/><circle cx="566.5" cy="198.6" r="3.5"/><circle cx="736" cy="35.5" r="3.5"/></g>
-                <text class="end-label" x="748" y="40" fill="#d4a017">Sentynl $384M</text>
-                <text class="end-label" x="748" y="246" fill="#1d4ed8">TrakPath $96M</text>
-                <text class="end-label" x="748" y="264" fill="#0f766e">BioTide $61.7M</text>
-                <text class="end-label" x="748" y="280" fill="#5b4b9a">RxPath $58.3M</text>
+                <polyline class="line" stroke="var(--co-bio)" points="58.0,306.7 227.5,298.0 397.0,288.0 566.5,278.7 736.0,267.6"/>
+                <polyline class="line" stroke="var(--co-rx)" points="58.0,307.0 227.5,298.7 397.0,289.2 566.5,280.5 736.0,270.0"/>
+                <polyline class="line" stroke="var(--co-trak)" points="58.0,311.6 227.5,307.7 397.0,294.7 566.5,274.2 736.0,242.9"/>
+                <polyline class="line" stroke="var(--co-sent)" points="58.0,311.9 227.5,304.8 397.0,271.7 566.5,198.6 736.0,35.5"/>
+                <g fill="var(--co-bio)"><circle cx="58" cy="306.7" r="3.5"/><circle cx="227.5" cy="298" r="3.5"/><circle cx="397" cy="288" r="3.5"/><circle cx="566.5" cy="278.7" r="3.5"/><circle cx="736" cy="267.6" r="3.5"/></g>
+                <g fill="var(--co-rx)"><circle cx="58" cy="307" r="3.5"/><circle cx="227.5" cy="298.7" r="3.5"/><circle cx="397" cy="289.2" r="3.5"/><circle cx="566.5" cy="280.5" r="3.5"/><circle cx="736" cy="270" r="3.5"/></g>
+                <g fill="var(--co-trak)"><circle cx="58" cy="311.6" r="3.5"/><circle cx="227.5" cy="307.7" r="3.5"/><circle cx="397" cy="294.7" r="3.5"/><circle cx="566.5" cy="274.2" r="3.5"/><circle cx="736" cy="242.9" r="3.5"/></g>
+                <g fill="var(--co-sent)"><circle cx="58" cy="311.9" r="3.5"/><circle cx="227.5" cy="304.8" r="3.5"/><circle cx="397" cy="271.7" r="3.5"/><circle cx="566.5" cy="198.6" r="3.5"/><circle cx="736" cy="35.5" r="3.5"/></g>
+                <text class="end-label" x="748" y="40" fill="var(--co-sent)">Sentynl $384M</text>
+                <text class="end-label" x="748" y="246" fill="var(--co-trak)">TrakPath $96M</text>
+                <text class="end-label" x="748" y="264" fill="var(--co-bio)">BioTide $61.7M</text>
+                <text class="end-label" x="748" y="280" fill="var(--co-rx)">RxPath $58.3M</text>
             </svg>
         </div>
         <p class="note">Illustrative company split of the commerce and tech layers. The Year-3 flag is where enterprise tech &amp; SaaS (TrakPath + Sentynl) overtakes commerce and services (BioTide + RxPath) — the same year software becomes the majority of mix. Year-5 labels are each company’s illustrative total. Not a forecast guarantee.</p>

@@ -8,6 +8,12 @@
             --teal-deep: #115e59;
             --purple: #5b4b9a;
             --gold: #d4a017;
+            --commerce: #64748b;
+            --saas: #0284c7;
+            --co-bio: #10b981;
+            --co-rx: #f97316;
+            --co-trak: #0ea5e9;
+            --co-sent: #e11d48;
             --paper: #ffffff;
             --mist: #f4f7fb;
             --line: #dbe4f0;
@@ -634,15 +640,15 @@
             display: flex;
             background: #e2e8f0;
         }
-        .bar .c { background: var(--navy); }
-        .bar .t { background: var(--gold); }
+        .bar .c { background: var(--commerce); }
+        .bar .t { background: var(--saas); }
         .mix-row em {
             font-style: normal;
             font-size: 11.5px;
             font-weight: 700;
             color: var(--muted);
         }
-        .mix-row.cross em { color: var(--teal); font-weight: 800; }
+        .mix-row.cross em { color: var(--saas); font-weight: 800; }
         .legend-inline {
             display: flex;
             gap: 16px;
@@ -662,10 +668,10 @@
         .growth-chart svg { width: 100%; height: auto; display: block; }
         .growth-chart .axis { fill: var(--muted); font-size: 11px; font-weight: 700; font-family: 'Plus Jakarta Sans', sans-serif; }
         .growth-chart .grid { stroke: #e2e8f0; stroke-width: 1; }
-        .growth-chart .line { fill: none; stroke-width: 2.75; stroke-linecap: round; stroke-linejoin: round; }
-        .growth-chart .flag-line { stroke: #0f766e; stroke-width: 1.5; stroke-dasharray: 4 4; }
+        .growth-chart .line { fill: none; stroke-width: 3.25; stroke-linecap: round; stroke-linejoin: round; }
+        .growth-chart .flag-line { stroke: var(--saas); stroke-width: 1.5; stroke-dasharray: 4 4; }
         .growth-chart .flag-label {
-            fill: #115e59;
+            fill: #075985;
             font-size: 11px;
             font-weight: 800;
             font-family: 'Plus Jakarta Sans', sans-serif;
