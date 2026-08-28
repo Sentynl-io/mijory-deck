@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="deck-updated" content="2026-08-07T11:28-05:00">
     <title>MiJory Wellness - VC/PE Investor Presentation</title>
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -29,7 +32,28 @@
             --blue-accent: #1d4ed8; 
             --blue-bright: #00FFFF; /* Maximum Visibility Neon Cyan */
             --blue-light: #eff6ff;
+            --blue-mid: #dbeafe;
+            --navy: #0b1f3a;
         }
+
+        /* Light-slide callouts: stay on-brand without dark “holes” on white */
+        .callout-surface {
+            background: linear-gradient(145deg, var(--blue-light) 0%, var(--blue-mid) 100%);
+            border: 1.5px solid var(--blue-accent);
+            border-radius: 10px;
+            color: var(--gray-700);
+        }
+        .callout-surface h4,
+        .callout-surface .callout-kicker {
+            color: var(--blue-accent);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .callout-surface strong { color: var(--pure-black); }
+        .theme-light .text-muted { color: var(--gray-600); }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
@@ -229,6 +253,9 @@
         .theme-dark strong[style*="blue-accent"] { color: #00FFFF !important; }
 
         .logo-container { display: flex; align-items: center; justify-content: flex-start; width: 100%; margin-bottom: 15px; }
+        a.logo-container { text-decoration: none; color: inherit; cursor: pointer; }
+        a.logo-link { text-decoration: none; color: inherit; display: flex; align-items: center; justify-content: center; height: 100%; width: 100%; }
+        #slide11 a.ask-partner-cell { text-decoration: none; }
         .logo-container img { max-width: 100%; max-height: 100%; object-fit: contain; object-position: left center; display: block; }
 
         /* Ensure logos on dark slides sit on a pure white background box */
@@ -318,6 +345,438 @@
         }
         .pie-inner { position: absolute; width: 120px; height: 120px; background-color: var(--pure-black); border-radius: 50%; z-index: 2; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 10px 20px rgba(0,0,0,0.8); }
 
+        /* Slide 11 — Institutional Valuation */
+        #slide-valuation .content-area {
+            justify-content: space-between;
+            gap: 14px;
+        }
+        #slide-valuation .val-intro {
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--gray-600);
+            font-weight: 600;
+            max-width: 1050px;
+            margin: 0;
+        }
+        #slide-valuation .val-compare {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            align-items: stretch;
+        }
+        #slide-valuation .val-card {
+            border-radius: 12px;
+            padding: 16px 18px;
+            border: 1.5px solid var(--gray-200);
+            background: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+        #slide-valuation .val-card.mijory {
+            border-color: var(--blue-accent);
+            background: linear-gradient(145deg, #eff6ff, #dbeafe);
+            box-shadow: 0 0 0 1px rgba(0, 102, 255, 0.12);
+        }
+        #slide-valuation .val-card h3 {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--gray-600);
+            margin-bottom: 8px;
+            line-height: 1.35;
+        }
+        #slide-valuation .val-card.mijory h3 { color: var(--blue-accent); }
+        #slide-valuation .val-multiple {
+            font-size: 34px;
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            color: var(--pure-black);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        #slide-valuation .val-card.mijory .val-multiple { color: var(--blue-accent); }
+        #slide-valuation .val-card p {
+            font-size: 12px;
+            line-height: 1.45;
+            color: var(--gray-600);
+            font-weight: 600;
+            margin: 0;
+            flex: 1;
+        }
+        #slide-valuation .val-card .val-detail {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(11, 31, 58, 0.08);
+            font-size: 11px;
+            line-height: 1.4;
+            color: var(--gray-600);
+            font-weight: 600;
+        }
+        #slide-valuation .val-card.mijory .val-detail { border-top-color: rgba(0, 102, 255, 0.15); }
+        #slide-valuation .val-peers {
+            font-size: 11px;
+            line-height: 1.45;
+            color: var(--gray-600);
+            font-weight: 600;
+            margin: 8px 0 0;
+            padding-left: 14px;
+        }
+        #slide-valuation .val-peers li { margin-bottom: 4px; }
+        #slide-valuation .val-peers li strong { color: var(--pure-black); }
+        #slide-valuation .val-thesis {
+            padding: 16px 20px;
+            background: linear-gradient(145deg, var(--blue-light) 0%, var(--blue-mid) 100%);
+            border-radius: 10px;
+            border: 1.5px solid var(--blue-accent);
+            border-left: 4px solid var(--blue-accent);
+        }
+        #slide-valuation .val-thesis h4 {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: var(--blue-accent);
+            margin-bottom: 10px;
+        }
+        #slide-valuation .val-thesis ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        #slide-valuation .val-thesis li {
+            font-size: 13px;
+            line-height: 1.45;
+            color: var(--gray-700);
+            font-weight: 600;
+            padding-left: 14px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+        #slide-valuation .val-thesis li:last-child { margin-bottom: 0; }
+        #slide-valuation .val-thesis li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--blue-accent);
+            font-weight: 800;
+        }
+        #slide-valuation .val-thesis li strong { color: var(--pure-black); }
+
+        /* Slide 07 — Compound Revenue Flywheel */
+        #slide8 .content-area {
+            justify-content: space-between;
+            gap: 10px;
+            padding: 10px 0 8px;
+            min-height: 0;
+        }
+        #slide8 .flywheel-intro {
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.45;
+            color: var(--pure-black);
+            text-align: center;
+            max-width: 1040px;
+            margin: 0 auto;
+            flex-shrink: 0;
+        }
+        #slide8 .flywheel-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-rows: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            flex: 1;
+            min-height: 0;
+            width: 100%;
+        }
+        #slide8 .flywheel-card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            min-height: 0;
+            height: 100%;
+            padding: 12px 14px;
+            border-radius: 8px;
+            border: 1px solid var(--blue-accent);
+            box-shadow: 0 0 0 1px rgba(0, 102, 255, 0.1);
+            background: var(--pure-white);
+        }
+        #slide8 .flywheel-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            width: 100%;
+            margin-bottom: 6px;
+            flex-shrink: 0;
+        }
+        #slide8 .flywheel-logo {
+            height: 30px;
+            width: 130px;
+            margin-bottom: 0;
+            flex-shrink: 0;
+        }
+        #slide8 .flywheel-pillar-tag {
+            font-size: 8px;
+            font-weight: 800;
+            letter-spacing: 0.7px;
+            text-transform: uppercase;
+            color: var(--blue-accent);
+            text-align: right;
+            line-height: 1.25;
+            flex-shrink: 0;
+        }
+        #slide8 .flywheel-name {
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: var(--pure-black);
+            margin: 0 0 4px;
+        }
+        #slide8 .flywheel-index {
+            color: var(--blue-accent);
+            margin-right: 4px;
+        }
+        #slide8 .flywheel-role {
+            font-size: 10.5px;
+            font-weight: 700;
+            line-height: 1.35;
+            color: var(--blue-accent);
+            margin: 0 0 6px;
+        }
+        #slide8 .flywheel-copy {
+            font-size: 11px;
+            line-height: 1.4;
+            color: var(--gray-600);
+            font-weight: 500;
+            margin: 0;
+            flex: 1;
+            min-height: 0;
+        }
+        #slide8 .flywheel-banner {
+            flex-shrink: 0;
+            padding: 10px 16px;
+            background: linear-gradient(145deg, var(--blue-light) 0%, var(--blue-mid) 100%);
+            border-radius: 8px;
+            text-align: center;
+            border: 1.5px solid var(--blue-accent);
+        }
+        #slide8 .flywheel-banner h4 {
+            font-size: 13px;
+            color: var(--pure-black);
+            margin: 0 0 4px;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+        #slide8 .flywheel-banner p {
+            font-size: 12px;
+            line-height: 1.4;
+            color: var(--gray-700);
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* Slide 12 — Ask layout & partner logo strip */
+        #slide11 .content-area {
+            justify-content: space-between;
+            gap: 16px;
+            padding: 8px 0 6px;
+            overflow: hidden;
+        }
+        #slide11 .ask-split {
+            flex: 1 1 auto;
+            min-height: 0;
+            height: 100%;
+            align-items: center;
+            align-self: stretch;
+            gap: 48px;
+        }
+        #slide11 .ask-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 0;
+            min-width: 0;
+        }
+        #slide11 .ask-kicker {
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+        #slide11 .ask-headline {
+            font-size: 46px;
+            font-weight: 800;
+            color: var(--pure-white);
+            line-height: 1.08;
+            letter-spacing: -0.03em;
+            margin-bottom: 8px;
+        }
+        #slide11 .ask-subtitle {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 14px;
+            line-height: 1.4;
+        }
+        #slide11 .ask-tier-matrix {
+            margin-bottom: 14px;
+            padding: 14px 16px;
+            background: rgba(0,255,255,0.06);
+            border: 1px solid rgba(0,255,255,0.25);
+            border-left: 4px solid #00FFFF;
+            border-radius: 0 8px 8px 0;
+        }
+        #slide11 .ask-tier-matrix-title {
+            color: #00FFFF;
+            font-size: 10.5px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            line-height: 1.35;
+        }
+        #slide11 .ask-tier-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11px;
+        }
+        #slide11 .ask-tier-table th {
+            text-align: left;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            padding: 0 6px 6px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+        #slide11 .ask-tier-table th:last-child {
+            text-align: right;
+            padding-right: 0;
+        }
+        #slide11 .ask-tier-table td {
+            padding: 5px 6px 5px 0;
+            vertical-align: top;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            color: #e2e8f0;
+            font-weight: 600;
+            line-height: 1.35;
+        }
+        #slide11 .ask-tier-table tr:last-child td {
+            border-bottom: none;
+        }
+        #slide11 .ask-tier-table td:first-child {
+            color: var(--pure-white);
+            font-weight: 800;
+            white-space: nowrap;
+        }
+        #slide11 .ask-tier-table td:nth-child(2) {
+            color: #cbd5e1;
+        }
+        #slide11 .ask-tier-table td:last-child {
+            text-align: right;
+            color: #94a3b8;
+            font-size: 10px;
+            font-weight: 700;
+            padding-right: 0;
+            white-space: nowrap;
+        }
+        #slide11 .ask-tier-footnote {
+            font-size: 10px;
+            line-height: 1.4;
+            color: #94a3b8;
+            margin: 10px 0 0;
+            font-style: italic;
+        }
+        #slide11 .ask-left .bullet-list {
+            margin-top: 0;
+        }
+        #slide11 .ask-left .bullet-list li {
+            font-size: 13px;
+            line-height: 1.45;
+            margin-bottom: 10px;
+        }
+        #slide11 .funds-layout {
+            align-self: center;
+        }
+        #slide11 .funds-heading {
+            color: var(--pure-white);
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+        #slide11 .funds-layout table td {
+            padding: 9px 10px !important;
+            font-size: 14px !important;
+        }
+        #slide11 .funds-layout table td:nth-child(2) {
+            font-size: 14px !important;
+            font-weight: 700 !important;
+        }
+        #slide11 .funds-layout table td:last-child {
+            font-size: 14px !important;
+            font-weight: 800 !important;
+        }
+        #slide11 .ask-partners {
+            flex-shrink: 0;
+            width: 100%;
+        }
+        #slide11 .ask-partners-label {
+            display: block;
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        #slide11 .ask-partner-grid {
+            display: grid;
+            grid-template-columns: repeat(8, minmax(0, 1fr));
+            gap: 6px;
+            background: #fff;
+            padding: 10px 12px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(255,255,255,0.08);
+        }
+        #slide11 .ask-partner-cell {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 42px;
+            max-height: 46px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background: #f8fafc;
+        }
+        #slide11 .ask-partner-cell img {
+            max-height: 34px;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+        #slide11 .funds-layout .pie-container {
+            width: 200px;
+            height: 200px;
+        }
+        #slide11 .funds-layout .pie-inner {
+            width: 120px;
+            height: 120px;
+        }
+        #slide11 .funds-layout .pie-inner [style*="font-size: 30px"] {
+            font-size: 32px !important;
+        }
+
         .modern-funnel { display: flex; flex-direction: column; gap: 8px; width: 100%; margin: 10px 0; }
         .funnel-step { display: flex; flex-direction: column; background: rgba(0,255,255,0.05); border-left: 4px solid #00FFFF; padding: 10px 15px; border-radius: 0 8px 8px 0; }
         .funnel-step .f-title { color: #00FFFF; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; text-shadow: 0 0 5px #00FFFF;}
@@ -369,8 +828,8 @@
             gap: 7px;
         }
         .traction-intro {
-            font-size: 12px;
-            line-height: 1.4;
+            font-size: 11px;
+            line-height: 1.35;
             color: #94a3b8;
             margin: 0;
             max-width: 1200px;
@@ -404,8 +863,8 @@
         .traction-grid {
             display: grid;
             grid-template-columns: 118px repeat(6, minmax(0, 1fr));
-            grid-template-rows: 34px repeat(4, 1fr);
-            gap: 6px 7px;
+            grid-template-rows: 30px repeat(4, minmax(112px, 1fr));
+            gap: 5px 6px;
             flex: 1;
             min-height: 0;
             align-items: stretch;
@@ -450,13 +909,27 @@
         }
         .t-company {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 8px;
+            justify-content: center;
+            gap: 4px;
             padding: 6px 8px;
             background: #0a0a0a;
             border: 1px solid #2a2a2a;
             border-radius: 8px;
         }
+        .t-company-commerce { border-left: 3px solid #64748b; }
+        .t-company-software { border-left: 3px solid var(--traction-accent, #fbbf24); }
+        .t-revenue-type {
+            font-size: 7px;
+            font-weight: 800;
+            letter-spacing: 0.45px;
+            text-transform: uppercase;
+            color: #64748b;
+            line-height: 1.25;
+            text-align: center;
+        }
+        .t-company-software .t-revenue-type { color: var(--traction-accent-strong, #fde68a); }
         .t-company .logo-container {
             width: 100%;
             height: 34px;
@@ -484,15 +957,19 @@
             position: relative;
             z-index: 1;
             width: 100%;
+            height: 100%;
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            gap: 3px;
-            padding: 7px 8px;
+            justify-content: flex-start;
+            align-items: stretch;
+            gap: 2px;
+            padding: 6px 7px;
             border-radius: 7px;
             border: 1px solid #333;
             background: #111;
             min-height: 0;
+            overflow: hidden;
         }
         .t-event.empty {
             background: transparent;
@@ -540,18 +1017,50 @@
             border: 1px solid rgba(192,132,252,0.45);
         }
         .t-event-title {
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 800;
             color: #fff;
-            line-height: 1.2;
+            line-height: 1.25;
             letter-spacing: -0.01em;
         }
         .t-event-desc {
-            font-size: 9px;
-            line-height: 1.3;
+            font-size: 8.5px;
+            line-height: 1.28;
             color: #94a3b8;
             font-weight: 500;
-            overflow-wrap: anywhere;
+            overflow-wrap: break-word;
+            word-break: normal;
+        }
+        .t-event-points {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+        }
+        .t-event-points li {
+            font-size: 8.5px;
+            line-height: 1.28;
+            color: #94a3b8;
+            font-weight: 500;
+            padding-left: 7px;
+            position: relative;
+        }
+        .t-event-points li::before {
+            content: '·';
+            position: absolute;
+            left: 0;
+            color: var(--traction-accent-strong, #fde68a);
+            font-weight: 800;
+        }
+        .t-event-kicker {
+            font-size: 8px;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            color: var(--traction-accent-strong, #fde68a);
+            line-height: 1.2;
         }
         .t-event.live {
             border-color: rgba(74,222,128,0.35);
@@ -645,7 +1154,7 @@
         }
         #slide1 .hero-sub {
             font-size: 20px;
-            max-width: 550px;
+            max-width: 680px;
             font-weight: 500;
             line-height: 1.6;
         }
@@ -780,6 +1289,13 @@
                 grid-template-columns: repeat(2, 1fr) !important;
             }
 
+            #slide8 .flywheel-grid {
+                grid-template-rows: auto;
+            }
+            #slide8 .content-area {
+                justify-content: flex-start;
+            }
+
             /* Traction: keep swimlane intact, scroll horizontally (tablet only) */
             #slide-traction .traction-scroll {
                 overflow-x: auto;
@@ -899,6 +1415,14 @@
                 grid-template-columns: 1fr !important;
             }
 
+            #slide8 .flywheel-grid {
+                grid-template-columns: 1fr !important;
+                grid-template-rows: auto;
+            }
+            #slide8 .flywheel-card {
+                height: auto;
+            }
+
             /* Traction: company-stacked timeline with phase chips */
             #slide-traction .content-area {
                 overflow: visible;
@@ -977,6 +1501,13 @@
             #slide-traction .t-event-desc {
                 font-size: 11px;
                 line-height: 1.4;
+            }
+            #slide-traction .t-event-points li {
+                font-size: 11px;
+                line-height: 1.4;
+            }
+            #slide-traction .t-event-kicker {
+                font-size: 9px;
             }
             #slide-traction .traction-footer-bar {
                 grid-template-columns: 1fr !important;
@@ -1106,6 +1637,24 @@
             .funds-layout table {
                 min-width: 0 !important;
                 width: 100%;
+            }
+
+            #slide-valuation .val-compare {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            #slide11 .ask-partner-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+            #slide11 .ask-headline {
+                font-size: 34px !important;
+            }
+            #slide11 .ask-left .bullet-list li {
+                font-size: 13px !important;
+            }
+            #slide11 .ask-split {
+                gap: 28px !important;
             }
 
             .content-area [style*="font-size: 100px"],
@@ -1332,8 +1881,8 @@
             </div>
             
             <div class="hero-kicker">Investor Presentation</div>
-            <h1 class="hero-title">End-to-End Infrastructure for Peptides, Longevity, and Personalized Health</h1>
-            <p class="hero-sub">A full-vertical infrastructure platform connecting product testing, wholesale supply, and verified patient outcomes.</p>
+            <h1 class="hero-title">The Operating System for High-Growth Health &amp; Longevity</h1>
+            <p class="hero-sub">A unified infrastructure platform orchestrating cryptographic supply verification, specialized clinical care, and real-world data intelligence&mdash;anchored by market leadership in peptides and compound health.</p>
             <nav class="brief-links" aria-label="Investor brief">
                 <a href="brief/index.html">Investor brief</a>
             </nav>
@@ -1359,7 +1908,7 @@
     <div class="content-area">
         <div class="split-layout">
             <div style="padding-right: 20px;">
-                <h3 style="font-size: 48px; margin-bottom: 25px; line-height: 1.1;">Proven Builders.<br><span style="color: var(--gray-400);">Serial Executors.</span></h3>
+                <h3 style="font-size: 48px; margin-bottom: 25px; line-height: 1.1;">Proven Builders.<br><span style="color: var(--gray-600);">Serial Executors.</span></h3>
                 <p style="font-size: 22px; font-weight: 600; color: var(--pure-black);">We believe in founder credibility first, and asset-light vertical infrastructure next.</p>
                 <p style="font-size: 16px;">The wellness and peptide industry is scaling massively, but it is built on fractured, opaque infrastructure. MiJory is capturing the ecosystem by owning the <strong style="color: var(--blue-accent);">trust layer</strong>—from the raw API to the patient diagnosis.</p>
             </div>
@@ -1463,57 +2012,60 @@
         <h2 class="slide-title">Advanced Technology Platforms From Supply Chain to Patient Outcomes</h2>
     </div>
     <div class="content-area">
-        <p style="margin-bottom: 10px; font-size: 16px; max-width: 900px; color: #000;">Here is the exact infrastructure we built to own that chain. Others own single lanes; MiJory connects the entire operating stack as <strong style="color: var(--blue-accent);">wholly-owned entities</strong>.</p>
-        <p style="margin-bottom: 20px; font-size: 14px; font-weight: 700; color: var(--blue-accent); text-transform: uppercase; letter-spacing: 1px;">Focus: Absolute regulatory compliance through all vertical companies.</p>
+        <p style="margin-bottom: 10px; font-size: 16px; max-width: 960px; color: #000;">Four wholly owned <strong style="color: var(--blue-accent);">core technology pillars</strong> of MiJory Wellness Enterprises&mdash;<strong style="color: var(--blue-accent);">BioTide</strong>, <strong style="color: var(--blue-accent);">RxPath</strong>, <strong style="color: var(--blue-accent);">TrakPath</strong>, and <strong style="color: var(--blue-accent);">Sentynl</strong>&mdash;form a unified stack from supply-chain verification to patient outcomes.</p>
+        <p style="margin-bottom: 20px; font-size: 14px; font-weight: 700; color: var(--blue-accent); text-transform: uppercase; letter-spacing: 1px;">Focus: BioTide &amp; RxPath drive immediate market dominance (~$600K/mo gross path, 511+ entities, 300+ clinicians); TrakPath &amp; Sentynl drive 85%+ gross margin expansion across the unified ecosystem.</p>
 
         <div class="four-column">
             <!-- TrakPath -->
-            <div class="tile" style="padding: 15px; border-color: var(--gray-200); align-items: center; text-align: center;">
-                <!-- Increased height drastically for logos -->
+            <div class="tile" style="padding: 15px; border-color: var(--blue-accent); align-items: center; text-align: center; box-shadow: 0 0 0 1px rgba(0,102,255,0.15);">
+                <div style="font-size: 9px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-accent); margin-bottom: 8px;">Core Technology Pillar</div>
                 <div style="height: 80px; width: 100%; display: flex; justify-content: center; align-items: center; margin-bottom: 15px;">
-                    <img src="TrakPath Logo.jpg" alt="TrakPath" style="height: 100%; max-width: 100%; object-fit: contain;">
+                    <a href="https://trakpath.io" target="_blank" rel="noopener noreferrer" class="logo-link"><img src="TrakPath Logo.jpg" alt="TrakPath" style="height: 100%; max-width: 100%; object-fit: contain;"></a>
                 </div>
                 <div class="ui-card" style="width: 100%; height: 100px;">
                     <img src="TrakPath Home Page.jpg" alt="TrakPath UI">
                 </div>
-                <h4 style="margin: 10px 0 5px 0; font-size: 13px;">Trust & Compliance</h4>
-                <p style="font-size: 12px; margin: 0; line-height: 1.4;">Pure SaaS / per-transaction model. Collects high-margin provenance and compliance fees on every transaction via immutable chain-of-custody, LIMS, and audit trails.</p>
+                <h4 style="margin: 10px 0 5px 0; font-size: 13px;">Core Verification &amp; Provenance Engine &middot; Cryptographic High-Margin Growth Catalyst</h4>
+                <p style="font-size: 12px; margin: 0; line-height: 1.4;"><strong style="color: var(--blue-accent);">Eliminates $15K&ndash;$50K/month in Redundant Retesting Waste.</strong> Pure SaaS / per-transaction model. <strong>Base L2 cryptographic hashing</strong> plus <strong>immuDB verification</strong> lock COAs permanently to an immutable audit trail&mdash;driving <strong>85%+ gross margin expansion</strong> across the unified ecosystem.</p>
             </div>
-            
-            <!-- BioTide -->
-            <div class="tile" style="padding: 15px; border-color: var(--gray-200); align-items: center; text-align: center;">
-                <div style="height: 80px; width: 100%; display: flex; justify-content: center; align-items: center; margin-bottom: 15px;">
-                    <img src="BioTide Logo.jpg" alt="BioTide" style="height: 100%; max-width: 100%; object-fit: contain;">
-                </div>
-                <div class="ui-card" style="width: 100%; height: 100px;">
-                    <img src="biotide home page.jpg" alt="BioTide UI">
-                </div>
-                <h4 style="margin: 10px 0 5px 0; font-size: 13px;">Supply & Wholesale</h4>
-                <p style="font-size: 12px; margin: 0; line-height: 1.4;">Marketplace / network model. Brokers high-margin wholesale peptide supply without holding inventory or taking on spoilage risk. Launching a peptide cosmetic line for online and retail store channels.</p>
-            </div>
-            
-            <!-- RxPath -->
-            <div class="tile" style="padding: 15px; border-color: var(--gray-200); align-items: center; text-align: center;">
-                <div style="height: 80px; width: 100%; display: flex; justify-content: center; align-items: center; margin-bottom: 15px;">
-                    <img src="RxPath Logo.jpg" alt="RxPath" style="height: 100%; max-width: 100%; object-fit: contain;">
-                </div>
-                <div class="ui-card" style="width: 100%; height: 100px;">
-                    <img src="rxpath homepage.jpg" alt="RxPath UI">
-                </div>
-                <h4 style="margin: 10px 0 5px 0; font-size: 13px;">Clinical & Telehealth</h4>
-                <p style="font-size: 12px; margin: 0; line-height: 1.4;">A clean telehealth routing layer that captures e-script and consultation fees, leaving physical fulfillment entirely to partners.</p>
-            </div>
-            
+
             <!-- Sentynl -->
-            <div class="tile" style="padding: 15px; border-color: var(--gray-200); align-items: center; text-align: center;">
+            <div class="tile" style="padding: 15px; border-color: var(--blue-accent); align-items: center; text-align: center; box-shadow: 0 0 0 1px rgba(0,102,255,0.15);">
+                <div style="font-size: 9px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-accent); margin-bottom: 8px;">Core Technology Pillar</div>
                 <div style="height: 80px; width: 100%; display: flex; justify-content: center; align-items: center; margin-bottom: 15px;">
                     <img src="Sentynl Logo.jpg" alt="Sentynl" style="height: 100%; max-width: 100%; object-fit: contain;">
                 </div>
                 <div class="ui-card" style="width: 100%; height: 100px;">
                     <img src="Sentynl Home Page.png" alt="Sentynl UI">
                 </div>
-                <h4 style="margin: 10px 0 5px 0; font-size: 13px;">Data & Intelligence</h4>
-                <p style="font-size: 12px; margin: 0; line-height: 1.4;">Solves <strong>Conflicting Incentives</strong> by turning provenanced supply and clinic data into actionable risk, clinical underwriting, and true outcome insights.</p>
+                <h4 style="margin: 10px 0 5px 0; font-size: 13px;">Core Intelligence &amp; Data Engine &middot; Trust Graph&trade; RWE Valuation Catalyst</h4>
+                <p style="font-size: 12px; margin: 0; line-height: 1.4;">Proprietary data intelligence engine aggregating <strong>anonymized telemetry across B2B nodes</strong>&mdash;supply, clinical, and verification events&mdash;into a compounding Trust Graph&trade; that drives <strong>85%+ gross margin expansion</strong> and enterprise-grade RWE licensing upside.</p>
+            </div>
+            
+            <!-- BioTide -->
+            <div class="tile" style="padding: 15px; border-color: var(--blue-accent); align-items: center; text-align: center; box-shadow: 0 0 0 1px rgba(0,102,255,0.15);">
+                <div style="font-size: 9px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-accent); margin-bottom: 8px;">Core Technology Pillar</div>
+                <div style="height: 80px; width: 100%; display: flex; justify-content: center; align-items: center; margin-bottom: 15px;">
+                    <a href="https://biotideusa.com" target="_blank" rel="noopener noreferrer" class="logo-link"><img src="BioTide Logo.jpg" alt="BioTide" style="height: 100%; max-width: 100%; object-fit: contain;"></a>
+                </div>
+                <div class="ui-card" style="width: 100%; height: 100px;">
+                    <img src="biotide home page.jpg" alt="BioTide UI">
+                </div>
+                <h4 style="margin: 10px 0 5px 0; font-size: 13px;">Core Commerce &amp; Supply Engine &middot; High-Velocity Revenue Foundation</h4>
+                <p style="font-size: 12px; margin: 0; line-height: 1.4;"><strong>511+ network entities</strong> (and growing every day) and 200+ reps routing wholesale volume through TrakPath verification. Product matrix extends beyond research peptides into <strong>peptide cosmetics, functional supplements, and longevity compounds</strong>&mdash;delivering immediate market dominance via an <strong>~$600K/mo gross path</strong> without inventory or spoilage risk.</p>
+            </div>
+            
+            <!-- RxPath -->
+            <div class="tile" style="padding: 15px; border-color: var(--blue-accent); align-items: center; text-align: center; box-shadow: 0 0 0 1px rgba(0,102,255,0.15);">
+                <div style="font-size: 9px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-accent); margin-bottom: 8px;">Core Technology Pillar</div>
+                <div style="height: 80px; width: 100%; display: flex; justify-content: center; align-items: center; margin-bottom: 15px;">
+                    <a href="https://rxpath.ai" target="_blank" rel="noopener noreferrer" class="logo-link"><img src="RxPath Logo.jpg" alt="RxPath" style="height: 100%; max-width: 100%; object-fit: contain;"></a>
+                </div>
+                <div class="ui-card" style="width: 100%; height: 100px;">
+                    <img src="rxpath homepage.jpg" alt="RxPath UI">
+                </div>
+                <h4 style="margin: 10px 0 5px 0; font-size: 13px;">Core Clinical &amp; Telehealth Engine &middot; Mandatory Baseline Care Architecture</h4>
+                <p style="font-size: 12px; margin: 0; line-height: 1.4;"><strong>300+ clinicians</strong> on a telehealth routing layer that strictly requires baseline diagnostic biomarker testing (PlexusDx) and active physician oversight before any therapy is prescribed&mdash;driving immediate market dominance, clinical compliance, and recurring biomarker/Rx revenue while feeding Sentynl telemetry.</p>
             </div>
         </div>
     </div>
@@ -1538,9 +2090,9 @@
             <p style="margin-bottom: 25px; font-size: 15px;">Core operating companies solely owned by MiJory Wellness Enterprises, creating our proprietary vertical stack.</p>
             
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;" class="center-logo">
-                <div class="logo-container" style="height: 100px; padding: 15px;"><img src="BioTide Logo.jpg" alt="BioTide" style="max-height: 80px;"></div>
-                <div class="logo-container" style="height: 100px; padding: 15px;"><img src="TrakPath Logo.jpg" alt="TrakPath" style="max-height: 80px;"></div>
-                <div class="logo-container" style="height: 100px; padding: 15px;"><img src="RxPath Logo.jpg" alt="RxPath" style="max-height: 80px;"></div>
+                <a href="https://biotideusa.com" target="_blank" rel="noopener noreferrer" class="logo-container" style="height: 100px; padding: 15px;"><img src="BioTide Logo.jpg" alt="BioTide" style="max-height: 80px;"></a>
+                <a href="https://trakpath.io" target="_blank" rel="noopener noreferrer" class="logo-container" style="height: 100px; padding: 15px;"><img src="TrakPath Logo.jpg" alt="TrakPath" style="max-height: 80px;"></a>
+                <a href="https://rxpath.ai" target="_blank" rel="noopener noreferrer" class="logo-container" style="height: 100px; padding: 15px;"><img src="RxPath Logo.jpg" alt="RxPath" style="max-height: 80px;"></a>
                 <div class="logo-container" style="height: 100px; padding: 15px;"><img src="Sentynl Logo.jpg" alt="Sentynl" style="max-height: 80px;"></div>
             </div>
         </div>
@@ -1730,42 +2282,55 @@
         <h2 class="slide-title">The Compound Revenue Flywheel</h2>
     </div>
     <div class="content-area">
-        <p style="margin-bottom: 20px; font-size: 18px; font-weight: 600; color: var(--pure-black); text-align: center; max-width: 1000px; margin-left: auto; margin-right: auto; line-height: 1.5;">
-            We operate as a digital tollbooth: routing, verification, and licensing fees at every node—high-margin economics decoupled from physical manufacturing COGS.
+        <p class="flywheel-intro">
+            Four wholly owned <strong style="color: var(--blue-accent);">core technology pillars</strong> of MiJory Wellness Enterprises compound across a unified ecosystem. <strong>BioTide</strong> and <strong>RxPath</strong> drive immediate market dominance (<strong>~$600K/mo gross path</strong>, <strong>511+ entities</strong>, <strong>300+ clinicians</strong>); <strong style="color: var(--blue-accent);">TrakPath</strong> and <strong style="color: var(--blue-accent);">Sentynl</strong> drive <strong>85%+ gross margin expansion</strong> and enterprise valuation multiples.
         </p>
-        
-        <div class="two-column" style="gap: 20px; margin-bottom: 20px; align-items: stretch;">
-            <div class="tile" style="align-items: flex-start; padding: 25px;">
-                <div class="logo-container" style="height: 40px; margin-bottom: 15px; width: 180px;"><img src="Confidential Manufacturer Logo.png" alt="Manufacturer"></div>
-                <h3 style="font-size: 18px; margin-bottom: 5px;">1. Partner Supply Economics</h3>
-                <p style="font-size: 13px; margin: 0; line-height: 1.4;">Partner-owned 503A/503B manufacturing delivers base-level pricing and capacity. MiJory routes demand; the partner bears CapEx, inventory, and spoilage.</p>
-            </div>
-            
-            <div class="tile" style="align-items: flex-start; padding: 25px;">
-                <div class="logo-container" style="height: 40px; margin-bottom: 15px; width: 180px;"><img src="PlexusDx Logo.jpg" alt="PlexusDx"></div>
-                <h3 style="font-size: 18px; margin-bottom: 5px;">2. Diagnostic Routing Margins</h3>
-                <p style="font-size: 13px; margin: 0; line-height: 1.4;">Strategic integration with PlexusDx routes high-complexity biomarker tests through partner labs—recurring margin without lab CapEx.</p>
-            </div>
-            
-            <div class="tile" style="align-items: flex-start; padding: 25px;">
-                <div class="logo-container" style="height: 40px; margin-bottom: 15px; width: 180px;"><img src="BioTide Logo.jpg" alt="BioTide"></div>
-                <h3 style="font-size: 18px; margin-bottom: 5px;">3. BioTide &amp; RxPath Tollbooths</h3>
-                <p style="font-size: 13px; margin: 0; line-height: 1.4;">Revenue via transaction fees and margins on routed wholesale and clinical orders—plus a peptide cosmetic line selling online and into retail—without holding inventory.</p>
-            </div>
-            
-            <div class="tile" style="align-items: flex-start; padding: 25px;">
-                <div style="display: flex; gap: 15px; margin-bottom: 15px; align-items: center;">
-                    <div class="logo-container" style="height: 35px; width: 100px; margin: 0;"><img src="TrakPath Logo.jpg" alt="TrakPath"></div>
-                    <div class="logo-container" style="height: 35px; width: 100px; margin: 0;"><img src="Sentynl Logo.jpg" alt="Sentynl"></div>
+
+        <div class="flywheel-grid">
+            <article class="flywheel-card">
+                <div class="flywheel-card-top">
+                    <a href="https://trakpath.io" target="_blank" rel="noopener noreferrer" class="logo-container flywheel-logo"><img src="TrakPath Logo.jpg" alt="TrakPath"></a>
+                    <span class="flywheel-pillar-tag">Core Technology Pillar</span>
                 </div>
-                <h3 style="font-size: 18px; margin-bottom: 5px;">4. SaaS Licenses &amp; Per-Scan Fees</h3>
-                <p style="font-size: 13px; margin: 0; line-height: 1.4;">TrakPath and Sentynl monetize via SaaS licenses, per-scan verification, and data licensing—pure software and data tollbooths.</p>
-            </div>
+                <h3 class="flywheel-name"><span class="flywheel-index">1.</span>TrakPath</h3>
+                <p class="flywheel-role">Core Verification &amp; Provenance Engine &middot; Cryptographic High-Margin Growth Catalyst</p>
+                <p class="flywheel-copy"><strong style="color: var(--blue-accent);">Eliminates $15K&ndash;$50K/month in redundant retesting waste.</strong> Base L2 cryptographic hashing and immuDB verification lock every COA to an immutable audit trail&mdash;driving <strong>85%+ gross margin expansion</strong> via SaaS and per-scan fees.</p>
+            </article>
+
+            <article class="flywheel-card">
+                <div class="flywheel-card-top">
+                    <div class="logo-container flywheel-logo"><img src="Sentynl Logo.jpg" alt="Sentynl"></div>
+                    <span class="flywheel-pillar-tag">Core Technology Pillar</span>
+                </div>
+                <h3 class="flywheel-name"><span class="flywheel-index">2.</span>Sentynl</h3>
+                <p class="flywheel-role">Core Intelligence &amp; Data Engine &middot; Trust Graph&trade; RWE Valuation Catalyst</p>
+                <p class="flywheel-copy">Aggregates anonymized telemetry across B2B nodes into a compounding Trust Graph&trade; that drives <strong>85%+ gross margin expansion</strong>, an unassailable data moat, and enterprise-grade RWE licensing upside.</p>
+            </article>
+
+            <article class="flywheel-card">
+                <div class="flywheel-card-top">
+                    <a href="https://biotideusa.com" target="_blank" rel="noopener noreferrer" class="logo-container flywheel-logo"><img src="BioTide Logo.jpg" alt="BioTide"></a>
+                    <span class="flywheel-pillar-tag">Core Technology Pillar</span>
+                </div>
+                <h3 class="flywheel-name"><span class="flywheel-index">3.</span>BioTide</h3>
+                <p class="flywheel-role">Core Commerce &amp; Supply Engine &middot; High-Velocity Revenue Foundation</p>
+                <p class="flywheel-copy"><strong>511+ network entities</strong> and 200+ reps routing wholesale volume through the stack. Multi-category catalog spanning peptides, cosmetics, supplements, and longevity compounds&mdash;<strong>~$600K/mo gross path</strong> without inventory risk.</p>
+            </article>
+
+            <article class="flywheel-card">
+                <div class="flywheel-card-top">
+                    <a href="https://rxpath.ai" target="_blank" rel="noopener noreferrer" class="logo-container flywheel-logo"><img src="RxPath Logo.jpg" alt="RxPath"></a>
+                    <span class="flywheel-pillar-tag">Core Technology Pillar</span>
+                </div>
+                <h3 class="flywheel-name"><span class="flywheel-index">4.</span>RxPath</h3>
+                <p class="flywheel-role">Core Clinical &amp; Telehealth Engine &middot; Mandatory Baseline Care Architecture</p>
+                <p class="flywheel-copy"><strong>300+ clinicians</strong> on a telehealth routing layer requiring PlexusDx baseline testing and physician oversight before any therapy&mdash;driving immediate market dominance and recurring biomarker/Rx revenue.</p>
+            </article>
         </div>
-        
-        <div style="padding: 15px; background: var(--blue-light); border-radius: 8px; text-align: center; border: 1px solid var(--blue-accent);">
-            <h4 style="font-size: 15px; color: var(--pure-black); margin-bottom: 5px; text-transform: none; letter-spacing: 0;"><i class="fa-solid fa-arrows-spin accent-text"></i> The Tollbooth Takeaway</h4>
-            <p style="font-size: 14px; margin: 0;">Every transaction through the ecosystem triggers a high-margin fee for MiJory, entirely decoupled from the COGS of physical manufacturing.</p>
+
+        <div class="flywheel-banner">
+            <h4><i class="fa-solid fa-arrows-spin accent-text"></i> Dominance &amp; Margin Expansion Economics</h4>
+            <p><strong style="color: var(--pure-black);">BioTide</strong> and <strong style="color: var(--pure-black);">RxPath</strong> drive immediate market dominance (~$600K/mo gross path, 511+ entities, 300+ clinicians). <strong style="color: var(--pure-black);">TrakPath</strong> and <strong style="color: var(--pure-black);">Sentynl</strong> drive <strong>85%+ gross margin expansion</strong> across the unified ecosystem.</p>
         </div>
     </div>
     <div class="slide-footer">
@@ -1842,11 +2407,13 @@
     </div>
     <div class="content-area">
         <div class="traction-board">
-            <p class="traction-intro">Live product momentum across the MiJory stack — 342 BioTide entities and 300+ clinicians live today, TrakPath in market validation with hemp partners advancing to commercial SaaS, and a path to $450M ARR at 85% margins.</p>
+            <p class="traction-intro">Live product momentum across the MiJory stack — <strong>511 BioTide network entities</strong> (and growing every day) and 300+ clinicians live today, TrakPath in market validation with hemp partners advancing to commercial SaaS, and a path to <strong style="color: var(--traction-accent-strong, #fde68a);">$450M recognized net revenue (ARR equivalent)</strong> at 85% margins. <strong style="color: #94a3b8;">Transactional commerce</strong> (BioTide/RxPath) funds the network; <strong style="color: var(--traction-accent-strong, #fde68a);">recurring software/data ARR</strong> (TrakPath/Sentynl) drives margin expansion and exit multiples.</p>
             <div class="traction-legend">
                 <span class="legend-item"><span class="legend-dot live"></span> Live / Operational</span>
                 <span class="legend-item"><span class="legend-dot launch"></span> Feature</span>
                 <span class="legend-item"><span class="legend-dot scale"></span> Scale / Monetization</span>
+                <span class="legend-item" style="margin-left: 8px; padding-left: 12px; border-left: 1px solid #333;"><span class="legend-dot" style="background:#64748b;"></span> Transactional Commerce (BioTide / RxPath)</span>
+                <span class="legend-item"><span class="legend-dot scale"></span> Recurring Software / Data ARR (TrakPath / Sentynl)</span>
             </div>
 
             <div class="traction-scroll">
@@ -1878,21 +2445,21 @@
                 </div>
 
                 <!-- BioTide row -->
-                <div class="t-company"><div class="logo-container"><img src="BioTide Logo.jpg" alt="BioTide"></div></div>
+                <div class="t-company t-company-commerce"><div class="logo-container"><a href="https://biotideusa.com" target="_blank" rel="noopener noreferrer" class="logo-link"><img src="BioTide Logo.jpg" alt="BioTide"></a></div><span class="t-revenue-type">Transactional Commerce Revenue</span></div>
                 <div class="t-lane">
                     <div class="t-event live">
                         <span class="t-tag live">Live</span>
                         <div class="t-phase"><span>Phase 1</span><span>Q3 2026</span></div>
                         <div class="t-event-title">Live RUO Portal</div>
-                        <div class="t-event-desc">342 active B2B entities on v1.0; 200+ reps processing national wholesale volume</div>
+                        <div class="t-event-desc">511 network entities; 200+ reps on national wholesale volume</div>
                     </div>
                 </div>
                 <div class="t-lane">
                     <div class="t-event launch">
-                        <span class="t-tag launch">Feature</span>
+                        <span class="t-tag launch">Launch</span>
                         <div class="t-phase"><span>Phase 2</span><span>Q4 2026</span></div>
-                        <div class="t-event-title">RUO Catalog Expansion</div>
-                        <div class="t-event-desc">Beyond peptides into research compounds, longevity molecules &amp; bioreagents; peptide cosmetic line for online + retail</div>
+                        <div class="t-event-title">Overseas Expansion &amp; Catalog Scale</div>
+                        <div class="t-event-desc">Cross-border RUO wholesale: EU, LATAM &amp; near-shore; peptide cosmetics &amp; supplements</div>
                     </div>
                 </div>
                 <div class="t-lane">
@@ -1915,21 +2482,21 @@
                     <div class="t-event scale">
                         <span class="t-tag scale">Global</span>
                         <div class="t-phase"><span>Phase 5</span><span>2029</span></div>
-                        <div class="t-event-title">Global RUO Rollout</div>
-                        <div class="t-event-desc">Wholesale RUO distribution into LATAM &amp; near-shore markets</div>
+                        <div class="t-event-title">Global Market Dominance</div>
+                        <div class="t-event-desc">Deep cross-border supply integration; localized hubs across 20+ jurisdictions</div>
                     </div>
                 </div>
                 <div class="t-lane">
                     <div class="t-event scale">
-                        <span class="t-tag scale">ARR</span>
+                        <span class="t-tag scale">Commerce</span>
                         <div class="t-phase"><span>Phase 6</span><span>2030</span></div>
                         <div class="t-event-title">Volume Scale Engine</div>
-                        <div class="t-event-desc">Core wholesale contribution supporting $450M Target ARR</div>
+                        <div class="t-event-desc">Core BioTide layer in $450M recognized net revenue (ARR equivalent) bridge</div>
                     </div>
                 </div>
 
                 <!-- RxPath row -->
-                <div class="t-company"><div class="logo-container"><img src="RxPath Logo.jpg" alt="RxPath"></div></div>
+                <div class="t-company t-company-commerce"><div class="logo-container"><a href="https://rxpath.ai" target="_blank" rel="noopener noreferrer" class="logo-link"><img src="RxPath Logo.jpg" alt="RxPath"></a></div><span class="t-revenue-type">Transactional Commerce Revenue</span></div>
                 <div class="t-lane">
                     <div class="t-event live">
                         <span class="t-tag live">Live</span>
@@ -1972,21 +2539,21 @@
                 </div>
                 <div class="t-lane">
                     <div class="t-event scale">
-                        <span class="t-tag scale">Standard</span>
+                        <span class="t-tag scale">Commerce</span>
                         <div class="t-phase"><span>Phase 6</span><span>2030</span></div>
                         <div class="t-event-title">Longevity Standard</div>
-                        <div class="t-event-desc">Preferred clinical/telehealth layer for personalized medicine</div>
+                        <div class="t-event-desc">Preferred telehealth commerce layer; RxPath routing in $450M revenue bridge</div>
                     </div>
                 </div>
 
                 <!-- TrakPath row -->
-                <div class="t-company"><div class="logo-container"><img src="TrakPath Logo.jpg" alt="TrakPath"></div></div>
+                <div class="t-company t-company-software"><div class="logo-container"><a href="https://trakpath.io" target="_blank" rel="noopener noreferrer" class="logo-link"><img src="TrakPath Logo.jpg" alt="TrakPath"></a></div><span class="t-revenue-type">Recurring Software / Data ARR</span></div>
                 <div class="t-lane">
                     <div class="t-event live">
                         <span class="t-tag live">Market Validation</span>
                         <div class="t-phase"><span>Phase 1</span><span>Q3 2026</span></div>
                         <div class="t-event-title">Market Validation + Provisional IP</div>
-                        <div class="t-event-desc">Provisional patent filed; NM ag/hemp rail established; 4 hemp companies preparing for v1 launch and beta participation</div>
+                        <div class="t-event-desc">Provisional IP filed; NM hemp rail live; 4 partners pre-v1 beta</div>
                     </div>
                 </div>
                 <div class="t-lane">
@@ -2023,15 +2590,15 @@
                 </div>
                 <div class="t-lane">
                     <div class="t-event scale">
-                        <span class="t-tag scale">Standard</span>
+                        <span class="t-tag scale">SaaS ARR</span>
                         <div class="t-phase"><span>Phase 6</span><span>2030</span></div>
                         <div class="t-event-title">Universal Compliance Rail</div>
-                        <div class="t-event-desc">Required provenance standard for regulated high-value commerce</div>
+                        <div class="t-event-desc">Recurring LIMS SaaS &amp; per-scan verification ARR — required provenance standard for regulated high-value commerce</div>
                     </div>
                 </div>
 
                 <!-- Sentynl row -->
-                <div class="t-company"><div class="logo-container"><img src="Sentynl Logo.jpg" alt="Sentynl"></div></div>
+                <div class="t-company t-company-software"><div class="logo-container"><img src="Sentynl Logo.jpg" alt="Sentynl"></div><span class="t-revenue-type">Recurring Software / Data ARR</span></div>
                 <div class="t-lane">
                     <div class="t-event live">
                         <span class="t-tag live">Active</span>
@@ -2074,10 +2641,10 @@
                 </div>
                 <div class="t-lane">
                     <div class="t-event scale">
-                        <span class="t-tag scale">Exit</span>
+                        <span class="t-tag scale">Data ARR</span>
                         <div class="t-phase"><span>Phase 6</span><span>2030</span></div>
-                        <div class="t-event-title">Exit &amp; Liquidity Event</div>
-                        <div class="t-event-desc">$450M ARR at 85% margins; IPO/M&amp;A at $3B–$6B+ valuation</div>
+                        <div class="t-event-title">Enterprise RWE Data Licensing</div>
+                        <div class="t-event-desc">Recurring software/data ARR from anonymized network exhaust — pharma R&amp;D, trial recruitment &amp; health-system risk scoring at platform scale</div>
                     </div>
                 </div>
             </div>
@@ -2089,7 +2656,7 @@
                 <div class="tf-item"><span class="tf-num">03</span><span class="tf-text">Regulatory Shield, IP Defense &amp; Protocol Scale</span></div>
                 <div class="tf-item"><span class="tf-num">04</span><span class="tf-text">Dual-Stream Data Revenue, Universal Sales &amp; Regtech</span></div>
                 <div class="tf-item"><span class="tf-num">05</span><span class="tf-text">Global Footprint &amp; Cross-Industry Adoption</span></div>
-                <div class="tf-item"><span class="tf-num">06</span><span class="tf-text">$450M ARR, 85% Margins &amp; Exit Execution</span></div>
+                <div class="tf-item"><span class="tf-num">06</span><span class="tf-text">$450M Recognized Net Revenue (ARR Equivalent), 85% Margins &amp; Exit Execution</span></div>
             </div>
         </div>
     </div>
@@ -2110,23 +2677,23 @@
         <div style="display: flex; flex-direction: column; justify-content: space-between;">
             <div>
                 <h3 style="font-size: 32px; margin-bottom: 15px;">Aggressive, Defensible Scale</h3>
-                <p style="margin-bottom: 20px; font-size: 14px; line-height: 1.5;">Revenue is heavily weighted toward high-margin Diagnostics and SaaS in out-years, transitioning gracefully from our initial bulk wholesale volume penetration to an ecosystem capture model.</p>
+                <p style="margin-bottom: 20px; font-size: 14px; line-height: 1.5;"><strong>Transactional commerce revenue</strong> (BioTide/RxPath) funds early network scale; <strong>recurring software/data ARR</strong> (TrakPath/Sentynl) compounds margins in out-years — transitioning from bulk wholesale penetration to high-margin ecosystem capture.</p>
                 
                 <ul class="bullet-list" style="margin-bottom: 25px;">
                     <li style="font-size: 14px;"><strong style="color: var(--blue-accent);">Accelerated Market Penetration:</strong> Capital-efficient go-to-market via ClickBank affiliate networks and our 200+ rep engine—high-ROI channels, not blank-check spend.</li>
                     <li style="font-size: 14px;"><strong style="color: var(--blue-accent);">B2B Infrastructure Capture:</strong> Direct-to-clinic distribution pipeline securing long-term fulfillment agreements.</li>
-                    <li style="font-size: 14px;"><strong style="color: var(--blue-accent);">Compound Margins:</strong> High margin SaaS & Diagnostic revenue layers driving hyper-profitability by year 3.</li>
+                    <li style="font-size: 14px;"><strong style="color: var(--blue-accent);">Compound Margins:</strong> Recurring TrakPath SaaS &amp; Sentynl data ARR layers drive hyper-profitability by Year 3 — distinct from transactional BioTide/RxPath commerce.</li>
                 </ul>
             </div>
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                <div class="tile" style="padding: 20px; align-items: center; justify-content: center; text-align: center; background: var(--gray-50);">
+                <div class="tile" style="padding: 20px; align-items: center; justify-content: center; text-align: center; background: var(--gray-50); border-color: var(--gray-200);">
                     <div class="metric-value" style="font-size: 40px; color: var(--blue-accent);">85%</div>
-                    <div style="font-size: 11px; font-weight: 800; color: var(--gray-500); text-transform: uppercase; letter-spacing: 1px;">Gross Margin by 2030</div>
+                    <div style="font-size: 11px; font-weight: 800; color: var(--gray-600); text-transform: uppercase; letter-spacing: 1px;">Gross Margin by 2030</div>
                 </div>
-                <div class="tile" style="padding: 20px; align-items: center; justify-content: center; text-align: center; border-color: var(--pure-black); background: var(--pure-black);">
-                    <div class="metric-value" style="color: var(--pure-white); font-size: 40px;">$450<span style="font-size: 18px;">M</span></div>
-                    <div style="font-size: 11px; font-weight: 800; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1px;">Target 2030 Revenue</div>
+                <div class="tile" style="padding: 20px; align-items: center; justify-content: center; text-align: center; border-color: var(--blue-accent); background: linear-gradient(145deg, var(--blue-light) 0%, var(--blue-mid) 100%); box-shadow: 0 0 0 1px rgba(29, 78, 216, 0.12);">
+                    <div class="metric-value" style="color: var(--blue-accent); font-size: 40px;">$450<span style="font-size: 18px;">M</span></div>
+                    <div style="font-size: 10px; font-weight: 800; color: var(--gray-700); text-transform: uppercase; letter-spacing: 0.8px; line-height: 1.35;">2030 Target Recognized Net Revenue<br>(ARR Equivalent)</div>
                 </div>
             </div>
         </div>
@@ -2165,7 +2732,7 @@
                     </div>
                     <div class="v-bar-container">
                         <div class="v-bar-val" style="color: var(--pure-black); font-size: 16px;">$450M</div>
-                        <div class="v-bar" style="height: 90%; background: var(--pure-black); width: 60px;"></div>
+                        <div class="v-bar" style="height: 90%; background: var(--blue-accent); width: 60px;"></div>
                         <div class="v-bar-label" style="font-size: 13px; position: absolute; bottom: -30px; font-weight: 900;">2030</div>
                     </div>
                 </div>
@@ -2179,46 +2746,120 @@
     </div>
 </div>
 
-<!-- SLIDE 11: The Ask -->
-<div class="slide-container theme-dark" id="slide11">
+<!-- SLIDE 11: Institutional Valuation Justification -->
+<div class="slide-container theme-light" id="slide-valuation">
     <div class="slide-header">
         <div class="slide-number">11</div>
+        <h2 class="slide-title">Institutional Valuation Justification &amp; Market Comparables</h2>
+    </div>
+    <div class="content-area">
+        <p class="val-intro">MiJory enters at a physical/clinical revenue multiple while the platform compounds toward HealthTech 2.0 infrastructure SaaS economics&mdash;creating a measurable valuation arbitrage for early institutional capital.</p>
+
+        <div class="val-compare">
+            <article class="val-card mijory">
+                <h3>MiJory · Asking Multiple</h3>
+                <div class="val-multiple">1.67&times;</div>
+                <p>Forward Year 1 revenue multiple on underwritten operating milestone.</p>
+                <div class="val-detail"><strong>$25M pre-money</strong> &divide; <strong>$15M underwritten Y1 revenue</strong> = enterprise software infrastructure entry pricing.</div>
+            </article>
+            <article class="val-card">
+                <h3>HealthTech 2.0 · Market Average</h3>
+                <div class="val-multiple">7.2&times;</div>
+                <p>EV/Revenue multiple &mdash; Bessemer Venture Partners 2026 HealthTech 2.0 benchmark.</p>
+                <ul class="val-peers">
+                    <li>Tempus AI &mdash; <strong>9.3&times;</strong></li>
+                    <li>Waystar &mdash; <strong>6.9&times;</strong></li>
+                    <li>Veeva &mdash; <strong>6.9&times;</strong></li>
+                </ul>
+            </article>
+            <article class="val-card">
+                <h3>Healthcare Supply Chain Peers</h3>
+                <div class="val-multiple" style="font-size: 22px; letter-spacing: -0.02em; line-height: 1.15;">$20M&ndash;$40M<br><span style="font-size: 13px; font-weight: 800; color: var(--gray-600);">Series A Range</span></div>
+                <p>Comparable supply chain AI and health tech infrastructure startups at Series A on <strong>$5M&ndash;$10M ARR</strong>&mdash;validating infrastructure multiples well above seed-stage physical commerce comps.</p>
+            </article>
+        </div>
+
+        <div class="val-thesis">
+            <h4>Investment Return Thesis</h4>
+            <ul>
+                <li><strong>75% valuation entry discount</strong> compared to public HealthTech infrastructure SaaS multiples (1.67&times; vs. 7.2&times; market average)&mdash;early check-writers capture institutional-grade software upside at seed pricing.</li>
+                <li><strong>3&times;&ndash;4&times; valuation lift by Year 3:</strong> Re-rating from a 1.67&times; physical/clinical revenue multiple to a standard <strong>5&times;&ndash;8&times; HealthTech SaaS multiple</strong> as TrakPath and Sentynl cross over commerce mix&mdash;immediate mark-up path for lead investors.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
+        <span class="deck-updated">Updated Aug 7, 2026, 11:28 AM CT</span>
+        <span><strong>Do Not Distribute</strong></span>
+    </div>
+</div>
+
+<!-- SLIDE 12: The Ask -->
+<div class="slide-container theme-dark" id="slide11">
+    <div class="slide-header">
+        <div class="slide-number">12</div>
         <h2 class="slide-title">Capital Strategy & Ask</h2>
     </div>
-    <div class="content-area split-layout" style="gap: 50px;">
+    <div class="content-area">
+        <div class="split-layout ask-split">
         
-        <div style="display: flex; flex-direction: column; justify-content: center;">
-            <h4 class="bright-blue" style="font-size: 15px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">Target Capital Raise</h4>
-            <div style="font-size: 100px; font-weight: 800; color: var(--pure-white); line-height: 1; letter-spacing: -0.05em; margin-bottom: 15px;">$10M</div>
-            
-            <ul class="bullet-list" style="margin-top: 10px;">
-                <li><strong style="color: var(--pure-white);">Commercial &amp; Affiliate Scale:</strong> Aggressive go-to-market via targeted ads, training, and education, plus joint efforts with ClickBank on affiliate marketing—revenue-share aligned so spend compounds into scale, not overhead.</li>
-                <li><strong style="color: var(--pure-white);">Scaling Infrastructure:</strong> Strategically deploying capital to rapidly expand manufacturing capacity, proprietary labs, and high-margin biomarker testing facilities.</li>
-                <li><strong style="color: var(--pure-white);">Commercial Deployment:</strong> Rapidly scaling our proven 200+ rep engine nationwide.</li>
-            </ul>
+        <div class="ask-left">
+            <h4 class="bright-blue ask-kicker">Enterprise Tech Infrastructure Raise</h4>
+            <div class="ask-headline">$5M Series Seed / Bridge</div>
+            <p class="ask-subtitle">Anchored at $25M Pre-Money Valuation &middot; Scalable to $10M Oversubscription Cap</p>
 
-            <div style="margin-top: 15px; display: flex; flex-direction: column; gap: 8px;">
-                <span style="font-size: 12px; font-weight: 800; color: var(--gray-400); text-transform: uppercase;">Securing scale with:</span>
-                
-                <div style="display: flex; gap: 15px; align-items: center; background: #fff; padding: 15px 20px; border-radius: 8px; flex-wrap: wrap; box-shadow: 0 0 15px rgba(255,255,255,0.1);">
-                    <img src="MiJory Logo.jpg" style="height: 50px; object-fit: contain;" alt="MiJory">
-                    <img src="BioTide Logo.jpg" style="height: 50px; object-fit: contain;" alt="BioTide">
-                    <img src="TrakPath Logo.jpg" style="height: 50px; object-fit: contain;" alt="TrakPath">
-                    <img src="RxPath Logo.jpg" style="height: 50px; object-fit: contain;" alt="RxPath">
-                    <img src="Sentynl Logo.jpg" style="height: 50px; object-fit: contain;" alt="Sentynl">
-                    <img src="ClickBank Logo.png" style="height: 50px; object-fit: contain;" alt="ClickBank">
-                    <img src="PlexusDx Logo.jpg" style="height: 50px; object-fit: contain;" alt="PlexusDx">
-                    <img src="Confidential Manufacturer Logo.png" style="height: 50px; object-fit: contain;" alt="Mfg">
-                </div>
-
+            <div class="ask-tier-matrix">
+                <h4 class="ask-tier-matrix-title">Investment Tier &amp; Equity Schedule ($25M Pre-Money / $30M Post-Money Cap)</h4>
+                <table class="ask-tier-table">
+                    <thead>
+                        <tr>
+                            <th>Check</th>
+                            <th>Equity</th>
+                            <th>Tier</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$1,000,000</td>
+                            <td>3.85% Post-Money ($26M Post)</td>
+                            <td>Single Seat / Accelerator</td>
+                        </tr>
+                        <tr>
+                            <td>$2,000,000</td>
+                            <td>7.41% Post-Money ($27M Post)</td>
+                            <td>Standard Seed Allocation</td>
+                        </tr>
+                        <tr>
+                            <td>$3,000,000</td>
+                            <td>10.71% Post-Money ($28M Post)</td>
+                            <td>Lead Investor Threshold</td>
+                        </tr>
+                        <tr>
+                            <td>$4,000,000</td>
+                            <td>13.79% Post-Money ($29M Post)</td>
+                            <td>Growth Syndicate Cap</td>
+                        </tr>
+                        <tr>
+                            <td>$5,000,000</td>
+                            <td>16.67% Post-Money ($30M Post)</td>
+                            <td>Enterprise Anchor Tier (1 Board Seat)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="ask-tier-footnote">All pricing reflects enterprise software infrastructure multiples (~1.67&times; Year 1 underwritten revenue).</p>
             </div>
+            
+            <ul class="bullet-list">
+                <li><strong style="color: var(--pure-white);">Commercial &amp; Affiliate Scale:</strong> Aggressive go-to-market via targeted ads, training, and education, plus joint efforts with ClickBank on affiliate marketing—revenue-share aligned so spend compounds into scale, not overhead.</li>
+                <li><strong style="color: var(--pure-white);">Platform &amp; Deployment:</strong> Partner routing integration, enterprise TrakPath SaaS activation, 200+ sales rep deployment, and supply chain orchestration—asset-light activation, not owned manufacturing or lab CapEx.</li>
+            </ul>
         </div>
 
         <div class="funds-layout" style="display: flex; gap: 40px; align-items: center;">
             <div style="flex-shrink: 0;">
-                <div class="pie-container" style="width: 200px; height: 200px;">
+                <div class="pie-container">
                     <div class="pie-chart"></div>
-                    <div class="pie-inner" style="width: 120px; height: 120px;">
+                    <div class="pie-inner">
                         <div style="text-align: center;">
                             <div style="font-size: 30px; font-weight: 800; color: var(--pure-white);">100%</div>
                             <div style="font-size: 10px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1px;">Allocated</div>
@@ -2227,7 +2868,7 @@
                 </div>
             </div>
             <div style="flex-grow: 1; min-width: 0;">
-                <h4 style="color: var(--pure-white); font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 8px;">Use of Funds Allocation</h4>
+                <h4 class="funds-heading">Scalable Allocation Matrix ($5M Base Runway / $10M Target)</h4>
                 <div class="table-scroll">
                 <table style="margin: 0; min-width: 0;">
                     <tbody>
@@ -2272,6 +2913,21 @@
                 </div>
             </div>
         </div>
+        </div>
+
+        <div class="ask-partners">
+            <span class="ask-partners-label">Securing scale with:</span>
+            <div class="ask-partner-grid">
+                <div class="ask-partner-cell"><img src="MiJory Logo.jpg" alt="MiJory"></div>
+                <a href="https://biotideusa.com" target="_blank" rel="noopener noreferrer" class="ask-partner-cell"><img src="BioTide Logo.jpg" alt="BioTide"></a>
+                <a href="https://trakpath.io" target="_blank" rel="noopener noreferrer" class="ask-partner-cell"><img src="TrakPath Logo.jpg" alt="TrakPath"></a>
+                <a href="https://rxpath.ai" target="_blank" rel="noopener noreferrer" class="ask-partner-cell"><img src="RxPath Logo.jpg" alt="RxPath"></a>
+                <div class="ask-partner-cell"><img src="Sentynl Logo.jpg" alt="Sentynl"></div>
+                <div class="ask-partner-cell"><img src="ClickBank Logo.png" alt="ClickBank"></div>
+                <div class="ask-partner-cell"><img src="PlexusDx Logo.jpg" alt="PlexusDx"></div>
+                <div class="ask-partner-cell"><img src="Confidential Manufacturer Logo.png" alt="Manufacturer"></div>
+            </div>
+        </div>
     </div>
     <div class="slide-footer">
         <span>Confidential &copy; 2026 MiJory Wellness Enterprises Inc.</span>
@@ -2298,10 +2954,10 @@
     </div>
 </div>
 
-<!-- SLIDE 12: Executive Bios -->
+<!-- SLIDE 20: Executive Bios -->
 <div class="slide-container theme-light" id="slide13">
     <div class="slide-header">
-        <div class="slide-number">12</div>
+        <div class="slide-number">13</div>
         <h2 class="slide-title">Appendix: Executive Leadership Bios</h2>
     </div>
     <div class="content-area">
@@ -2338,7 +2994,7 @@
 <!-- SLIDE 13: Extended Team & Partners -->
 <div class="slide-container theme-light" id="slide14">
     <div class="slide-header">
-        <div class="slide-number">13</div>
+        <div class="slide-number">14</div>
         <h2 class="slide-title">Appendix: Extended Leadership & Growth Partners</h2>
     </div>
     <div class="content-area" style="justify-content: flex-start; gap: 20px;">
@@ -2415,7 +3071,7 @@
 <!-- SLIDE 14: Advisors -->
 <div class="slide-container theme-light" id="slide15">
     <div class="slide-header">
-        <div class="slide-number">14</div>
+        <div class="slide-number">15</div>
         <h2 class="slide-title">Appendix: Strategic Advisory Board</h2>
     </div>
     <div class="content-area">
@@ -2465,7 +3121,7 @@
 <!-- SLIDE 15: Forecast Drivers -->
 <div class="slide-container theme-light" id="slide16">
     <div class="slide-header">
-        <div class="slide-number">15</div>
+        <div class="slide-number">16</div>
         <h2 class="slide-title">Appendix: Forecast Drivers</h2>
     </div>
     <div class="content-area">
@@ -2492,17 +3148,17 @@
                         <td>Drives immediate patient volume and telehealth utilization.</td>
                     </tr>
                     <tr>
-                        <td style="padding: 8px 12px;"><div class="logo-container" style="margin:0; height: 35px; width: 150px;"><img src="BioTide Logo.jpg" alt="BioTide"></div></td>
+                        <td style="padding: 8px 12px;"><a href="https://biotideusa.com" target="_blank" rel="noopener noreferrer" class="logo-container" style="margin:0; height: 35px; width: 150px;"><img src="BioTide Logo.jpg" alt="BioTide"></a></td>
                         <td>Bulk RUO/clinical, white-label, downline</td>
                         <td>Starts ~$600K/mo gross path; org margins ~30%</td>
                     </tr>
                     <tr>
-                        <td style="padding: 8px 12px;"><div class="logo-container" style="margin:0; height: 35px; width: 150px;"><img src="RxPath Logo.jpg" alt="RxPath"></div></td>
+                        <td style="padding: 8px 12px;"><a href="https://rxpath.ai" target="_blank" rel="noopener noreferrer" class="logo-container" style="margin:0; height: 35px; width: 150px;"><img src="RxPath Logo.jpg" alt="RxPath"></a></td>
                         <td>Visit fees, clinician SaaS, care margin</td>
                         <td>$15 visit / $299 onboard / $59 SaaS; high-margin tech fees, partner fulfillment</td>
                     </tr>
                     <tr>
-                        <td style="padding: 8px 12px;"><div class="logo-container" style="margin:0; height: 35px; width: 150px;"><img src="TrakPath Logo.jpg" alt="TrakPath"></div></td>
+                        <td style="padding: 8px 12px;"><a href="https://trakpath.io" target="_blank" rel="noopener noreferrer" class="logo-container" style="margin:0; height: 35px; width: 150px;"><img src="TrakPath Logo.jpg" alt="TrakPath"></a></td>
                         <td>Seats, custody verification, LIMS SaaS</td>
                         <td>~$10/user, $5/verify, $299/mo lab packages—pure SaaS / per-scan tollbooth</td>
                     </tr>
@@ -2531,7 +3187,7 @@
 <!-- SLIDE 16: Tech Flow Deep Dive -->
 <div class="slide-container theme-light" id="slide17">
     <div class="slide-header">
-        <div class="slide-number">16</div>
+        <div class="slide-number">17</div>
         <h2 class="slide-title">Appendix: Full Vertical Capabilities & Flow</h2>
     </div>
     <div class="content-area">
@@ -2550,21 +3206,21 @@
             
             <div class="tile" style="padding: 20px; border: 1px solid var(--blue-accent); background: var(--blue-light);">
                 <div style="font-size: 9px; font-weight: 800; letter-spacing: 0.6px; text-transform: uppercase; color: var(--blue-accent); margin-bottom: 6px;">Digital Tollbooth</div>
-                <div class="logo-container" style="height: 40px; margin-bottom: 10px;"><img src="BioTide Logo.jpg" alt="BioTide"></div>
+                <a href="https://biotideusa.com" target="_blank" rel="noopener noreferrer" class="logo-container" style="height: 40px; margin-bottom: 10px;"><img src="BioTide Logo.jpg" alt="BioTide"></a>
                 <h4 style="font-size: 13px; margin-bottom: 4px; color: var(--pure-black);">2. Wholesale Distribution</h4>
                 <p style="font-size: 12px; margin: 0; line-height: 1.4;">B2B marketplace routing product efficiently—transaction fees without holding inventory or spoilage risk.</p>
             </div>
 
             <div class="tile" style="padding: 20px; border: 1px solid var(--blue-accent); background: var(--blue-light);">
                 <div style="font-size: 9px; font-weight: 800; letter-spacing: 0.6px; text-transform: uppercase; color: var(--blue-accent); margin-bottom: 6px;">Digital Tollbooth</div>
-                <div class="logo-container" style="height: 40px; margin-bottom: 10px;"><img src="TrakPath Logo.jpg" alt="TrakPath"></div>
+                <a href="https://trakpath.io" target="_blank" rel="noopener noreferrer" class="logo-container" style="height: 40px; margin-bottom: 10px;"><img src="TrakPath Logo.jpg" alt="TrakPath"></a>
                 <h4 style="font-size: 13px; margin-bottom: 4px; color: var(--blue-accent);">3. The Trust Layer</h4>
                 <p style="font-size: 12px; margin: 0; line-height: 1.4;">The invisible shield protecting nodes 1 & 2. SaaS / per-scan fees for immutable chain-of-custody, LIMS data, rule enforcement, and trusted COA's.</p>
             </div>
 
             <div class="tile" style="padding: 20px; border: 1px solid var(--blue-accent); background: var(--blue-light);">
                 <div style="font-size: 9px; font-weight: 800; letter-spacing: 0.6px; text-transform: uppercase; color: var(--blue-accent); margin-bottom: 6px;">Digital Tollbooth</div>
-                <div class="logo-container" style="height: 40px; margin-bottom: 10px;"><img src="RxPath Logo.jpg" alt="RxPath"></div>
+                <a href="https://rxpath.ai" target="_blank" rel="noopener noreferrer" class="logo-container" style="height: 40px; margin-bottom: 10px;"><img src="RxPath Logo.jpg" alt="RxPath"></a>
                 <h4 style="font-size: 13px; margin-bottom: 4px; color: var(--pure-black);">4. Clinical Telehealth</h4>
                 <p style="font-size: 12px; margin: 0; line-height: 1.4;">Digital routing layer for licensed oversight, biomarkers, and care plans—e-script and consultation fees; physical fulfillment stays with partners.</p>
             </div>
@@ -2594,7 +3250,7 @@
 <!-- SLIDE 17: TrakPath Mobile Showcase -->
 <div class="slide-container theme-dark" id="slide18">
     <div class="slide-header">
-        <div class="slide-number">17</div>
+        <div class="slide-number">18</div>
         <h2 class="slide-title">Appendix: TrakPath Mobile Visibility</h2>
     </div>
     <div class="content-area split-layout" style="gap: 40px;">
@@ -2651,7 +3307,7 @@
 <!-- SLIDE 18: Regulatory Edge -->
 <div class="slide-container theme-light" id="slide19">
     <div class="slide-header">
-        <div class="slide-number">18</div>
+        <div class="slide-number">19</div>
         <h2 class="slide-title">Appendix: Regulatory & Compliance Edge</h2>
     </div>
     <div class="content-area">
@@ -2664,12 +3320,12 @@
             </div>
             
             <div class="tile" style="padding: 15px;">
-                <div class="logo-container" style="height: 40px; margin-bottom: 10px;"><img src="TrakPath Logo.jpg" alt="TrakPath" style="max-height: 40px;"></div>
+                <a href="https://trakpath.io" target="_blank" rel="noopener noreferrer" class="logo-container" style="height: 40px; margin-bottom: 10px;"><img src="TrakPath Logo.jpg" alt="TrakPath" style="max-height: 40px;"></a>
                 <p style="font-size: 12px; line-height: 1.4; margin-bottom: 0;">Ensures product authenticity through <strong>immutable chain-of-custody proof</strong> and cryptographically secure <strong>COA authentication</strong>.</p>
             </div>
 
             <div class="tile" style="padding: 15px;">
-                <div class="logo-container" style="height: 40px; margin-bottom: 10px;"><img src="BioTide Logo.jpg" alt="BioTide" style="max-height: 40px;"></div>
+                <a href="https://biotideusa.com" target="_blank" rel="noopener noreferrer" class="logo-container" style="height: 40px; margin-bottom: 10px;"><img src="BioTide Logo.jpg" alt="BioTide" style="max-height: 40px;"></a>
                 <p style="font-size: 12px; line-height: 1.4; margin-bottom: 0;">The <strong>Compliance Hub</strong> ensures safety by verifying all wholesale peptide buyers through rigorous cross-checking of the <strong>national NPI number database</strong>.</p>
             </div>
 
@@ -2699,7 +3355,7 @@
 <!-- SLIDE 19: Disclaimers -->
 <div class="slide-container theme-dark" id="slide20">
     <div class="slide-header">
-        <div class="slide-number">19</div>
+        <div class="slide-number">20</div>
         <h2 class="slide-title">Appendix: Safe Harbor & Disclaimers</h2>
     </div>
     <div class="content-area">
